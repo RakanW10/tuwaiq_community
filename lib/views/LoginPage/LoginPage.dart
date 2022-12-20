@@ -18,7 +18,6 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("😎😎احسن مشروع "),
-            
           ],
         ),
       ),
