@@ -22,10 +22,10 @@ class StatisticsBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: Get.height / 3,
+      height: Get.height / 3.3,
       width: Get.width - 20,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         color: appColors.onSecondary,
         boxShadow: [
           BoxShadow(
@@ -38,7 +38,7 @@ class StatisticsBox extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 230, top: 10),
+            padding: const EdgeInsets.only(left: 250, top: 20),
             child: Text(
               "الإحصائيات",
               style: TextStyle(
@@ -48,7 +48,7 @@ class StatisticsBox extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 110, top: 10),
+            padding: const EdgeInsets.only(left: 150, top: 10),
             child: Text(
               "ترتيبك في لائحة المتصدرين",
               style: TextStyle(fontSize: 18, color: appColors.onMain),
@@ -103,7 +103,7 @@ class StatisticsBox extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 30,
+            height: 40,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

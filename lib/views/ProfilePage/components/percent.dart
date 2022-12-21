@@ -13,24 +13,23 @@ class percent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: new LinearPercentIndicator(
-                            width: Get.width - 100,
-                            animation: true,
-                            lineHeight: 20.0,
-                            animationDuration: 2000,
-                            percent: percentLv,
-                            linearStrokeCap: LinearStrokeCap.roundAll,
-                            progressColor: appColors.onPrimary,
-                          ),
-                        ),
-                        Text("Lv.${LevelNumber}")
-                      ],
-                    ),
+    return Row(
+      children: [
+        Padding(
+          padding: EdgeInsets.all(10),
+          child: new LinearPercentIndicator(
+            width: Get.width - 90,
+            animation: true,
+            lineHeight: 10,
+            animationDuration: 2000,
+            percent: 0.7,
+            linearStrokeCap: LinearStrokeCap.roundAll,
+            progressColor: appColors.onPrimary,
+            barRadius: Radius.circular(22),
+          ),
+        ),
+        Text("Lv.${LevelNumber}")
+      ],
     );
   }
 }

@@ -43,28 +43,9 @@ class ProfilePage extends StatelessWidget {
                       nameTrainee: 'رغد عبدالله',
                       traineeLve: 'الأول على على معسكر fiutter',
                     ),
-
-                    // percent(
-                    //   LevelNumber: 3,
-                    //   percentLv: 0.7,
-                    // ),
-
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: new LinearPercentIndicator(
-                            width: Get.width - 100,
-                            animation: true,
-                            lineHeight: 20.0,
-                            animationDuration: 2000,
-                            percent: 0.7,
-                            linearStrokeCap: LinearStrokeCap.roundAll,
-                            progressColor: appColors.onPrimary,
-                          ),
-                        ),
-                        Text("Lv.3")
-                      ],
+                    percent(
+                      LevelNumber: 3,
+                      percentLv: 0.7,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -92,14 +73,12 @@ class ProfilePage extends StatelessWidget {
                         ),
                       ],
                     ),
-
                     StatisticsBox(
                       campsNum: 1,
                       prizesNum: 17,
                       tuwaiqNum: 16,
                       visitsNum: 200,
                     ),
-
                     Column(
                       children: [
                         Padding(
@@ -157,8 +136,8 @@ class ProfilePage extends StatelessWidget {
                                 width: 10,
                               ),
                               AchievementsBox(
-                                image: Image.asset("images/GitHubReward 1.png"),
-                                name: 'وسام GitHub',
+                                image: Image.asset("images/Group 898.jpg"),
+                                name: 'وسام Swift',
                               ),
                             ],
                           ),

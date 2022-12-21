@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class AchievementsBox extends StatelessWidget {
-  AchievementsBox({super.key ,required this.image, required this.name});
+  AchievementsBox({super.key, required this.image, required this.name});
   Image? image;
   String? name;
 
@@ -14,15 +14,15 @@ class AchievementsBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 150,
-        width: Get.width / 3,
+        width: Get.width / 3.2,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(10),
           color: appColors.onSecondary,
           boxShadow: [
             BoxShadow(
-              color: Colors.black,
-              blurRadius: 15,
-              offset: Offset(1, 1), // Shadow position
+              // color: Colors.black,
+              blurRadius: 5,
+              //  offset: Offset(1, 1), // Shadow position
             ),
           ],
         ),
