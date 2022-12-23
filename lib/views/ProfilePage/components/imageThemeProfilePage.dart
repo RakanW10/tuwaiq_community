@@ -4,8 +4,9 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class ImageThemeProfilePage extends StatelessWidget {
-  const ImageThemeProfilePage({super.key});
-
+  const ImageThemeProfilePage(
+      {super.key, this.imagePath = "images/profile.png"});
+  final String imagePath;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +27,7 @@ class ImageThemeProfilePage extends StatelessWidget {
           padding: EdgeInsets.all(20),
           decoration: new BoxDecoration(
               image: new DecorationImage(
-            image: new AssetImage("images/profile.png"),
+            image: new AssetImage(imagePath),
             fit: BoxFit.fill,
           ))),
     );

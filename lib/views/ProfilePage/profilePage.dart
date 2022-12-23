@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:tuwaiq_community/views/ProfilePage/components/AchievementsBox.dart';
@@ -119,6 +120,7 @@ class ProfilePage extends StatelessWidget {
                           width: Get.width,
                           height: 150,
                           child: ListView(
+                         
                             scrollDirection: Axis.horizontal,
                             children: [
                               AchievementsBox(
@@ -136,7 +138,8 @@ class ProfilePage extends StatelessWidget {
                                 width: 10,
                               ),
                               AchievementsBox(
-                                image: Image.asset("images/Group 898.jpg"),
+                                image:
+                                    SvgPicture.asset("images/Group 898-4.svg"),
                                 name: 'وسام Swift',
                               ),
                             ],

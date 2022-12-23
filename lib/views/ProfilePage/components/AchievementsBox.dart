@@ -7,7 +7,7 @@ import 'package:tuwaiq_community/views/style.dart';
 
 class AchievementsBox extends StatelessWidget {
   AchievementsBox({super.key, required this.image, required this.name});
-  Image? image;
+  dynamic? image;
   String? name;
 
   @override
@@ -28,7 +28,7 @@ class AchievementsBox extends StatelessWidget {
         ),
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          image!,
+          image,
           Text(
             name!,
             style: TextStyle(

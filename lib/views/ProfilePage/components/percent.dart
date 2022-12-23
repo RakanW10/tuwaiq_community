@@ -11,6 +11,8 @@ class percent extends StatelessWidget {
   double percentLv;
   int LevelNumber;
 
+  // tap viwe
+
   @override
   Widget build(BuildContext context) {
     return Row(
