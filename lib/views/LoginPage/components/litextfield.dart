@@ -4,15 +4,17 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class liTextField extends StatelessWidget {
-  liTextField({super.key, required this.title, this.hint});
+  liTextField({super.key, required this.title, this.hint, this.inputType});
   final String title;
   final String? hint;
+  final TextInputType? inputType;
 
   //hint is optional
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      keyboardType: inputType,
       textAlign: TextAlign.right,
       decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -27,7 +29,6 @@ class liTextField extends StatelessWidget {
           ),
           hintText: hint,
           labelText: title,
-          alignLabelWithHint: true,
           hintStyle: TextStyle(color: appColors.onPrimary),
           labelStyle: TextStyle(color: appColors.onPrimary, fontSize: 23)),
     );

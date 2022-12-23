@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class liButton extends StatelessWidget {
-  const liButton({super.key, required this.btnName, required this.btnIcon, required this.ontapfunc});
+  const liButton(
+      {super.key,
+      required this.btnName,
+      this.btnIcon,
+      required this.onPressed});
   final String btnName;
-  final IconData btnIcon;
-  final Function ontapfunc;
+  final IconData? btnIcon;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (() => ontapfunc),
+      onTap: onPressed,
       child: Container(
         height: 52,
         width: 260,
