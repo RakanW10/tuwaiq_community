@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
-import 'package:tuwaiq_community/views/MycCommunitiesPage/components/%20myCommunitiesCard.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/components/%20myCommunitiesCard.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-class MycCommunitiesPage extends StatefulWidget {
+class CommunitiesPage extends StatefulWidget {
   @override
   _StackOverState createState() => _StackOverState();
 }
 
-class _StackOverState extends State<MycCommunitiesPage>
+class _StackOverState extends State<CommunitiesPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
@@ -36,6 +36,8 @@ class _StackOverState extends State<MycCommunitiesPage>
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
+
+      
       body: Container(
         alignment: Alignment.center,
         height: Get.height,
@@ -75,6 +77,7 @@ class _StackOverState extends State<MycCommunitiesPage>
               ),
 
 //-------------------------------------------------------------------------------------
+
               Expanded(
                 child: TabBarView(
                   controller: _tabController,
@@ -97,7 +100,10 @@ class _StackOverState extends State<MycCommunitiesPage>
                       },
                     ),
 
+
 //-----------------------------------------------------------------------------------
+
+
 
                     GridView.builder(
                       padding: EdgeInsets.only(top: 30),
