@@ -29,9 +29,10 @@ class StatisticsBox extends StatelessWidget {
         color: appColors.onSecondary,
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
-            blurRadius: 15,
-            offset: Offset(1, 1), // Shadow position
+            color: Color.fromARGB(255, 113, 111, 111),
+            spreadRadius: 2,
+            blurRadius: 10,
+            offset: Offset(0, 2),
           ),
         ],
       ),

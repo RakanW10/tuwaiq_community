@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class MyCommunitiesCard extends StatelessWidget {
-   MyCommunitiesCard({super.key , this.image, this.nameCommunity, this.onTapCard });
+  MyCommunitiesCard(
+      {super.key, this.image, this.nameCommunity, this.onTapCard});
   final String? image;
   final String? nameCommunity;
   Function()? onTapCard;
@@ -14,7 +15,7 @@ class MyCommunitiesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTapCard ,
+      onTap: onTapCard,
       child: Container(
         height: Get.height / 8,
         width: Get.height - 20,
@@ -26,22 +27,29 @@ class MyCommunitiesCard extends StatelessWidget {
             ]),
         child: Row(
           children: [
-            Image.asset(
-              image!,
-            ),
-            Container(
-              constraints: const BoxConstraints(
-                maxWidth: 250,
-              ),
-              child: Text(
-                nameCommunity!,
-                style: TextStyle(color: appColors.onMain, fontSize: 20),
+            Expanded(
+              child: Image.asset(
+                image!,
               ),
             ),
-            Icon(
-              Icons.arrow_forward_ios_sharp,
-              color: appColors.onMain,
-              size: 40,
+            Expanded(
+              flex: 2,
+              child: Container(
+                constraints: const BoxConstraints(
+                  maxWidth: 300,
+                ),
+                child: Text(
+                  nameCommunity!,
+                  style: TextStyle(color: appColors.onMain, fontSize: 15.5),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Icon(
+                Icons.arrow_forward_ios_sharp,
+                color: appColors.onMain,
+                size: 35,
+              ),
             )
           ],
         ),

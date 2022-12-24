@@ -44,11 +44,11 @@ class _StackOverState extends State<MycCommunitiesPage>
           gradient: appColors.backgroundColor,
         ),
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
           child: Column(
             children: [
               Container(
-                height: 35,
+                height: 30,
                 decoration: BoxDecoration(
                   color: appColors.onSecondary,
                   borderRadius: BorderRadius.circular(25),
@@ -74,12 +74,13 @@ class _StackOverState extends State<MycCommunitiesPage>
                 ),
               ),
 
-              //---------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
               Expanded(
                 child: TabBarView(
                   controller: _tabController,
                   children: [
                     GridView.builder(
+                      padding: EdgeInsets.only(top: 30),
                       itemCount: myCommunity.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
@@ -99,6 +100,7 @@ class _StackOverState extends State<MycCommunitiesPage>
 //-----------------------------------------------------------------------------------
 
                     GridView.builder(
+                      padding: EdgeInsets.only(top: 30),
                       itemCount: tuCommunity.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
@@ -124,5 +126,3 @@ class _StackOverState extends State<MycCommunitiesPage>
     );
   }
 }
-
-

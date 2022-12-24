@@ -36,12 +36,12 @@ List tuCommunity = [
   },
   {
     "id": "5",
-    "nameCommunity": "معسكر تصميم الواجهات وتجربة المستخدم UI/UX",
-    "image": "images/image 2.png"
+    "nameCommunity": "دورة التصميم ثلاثي الأبعاد",
+    "image": "images/image 8.png"
   },
   {
     "id": "6",
-    "nameCommunity": "معسكر تصميم الواجهات وتجربة المستخدم UI/UX",
-    "image": "images/image 2.png"
+    "nameCommunity": "دورة البرمجة بلغة JAVA باستخدام إطار عمل Spring Boot (للمتقدمين)",
+    "image": "images/image 5.png"
   },
 ];

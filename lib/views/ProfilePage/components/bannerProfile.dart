@@ -49,7 +49,9 @@ class banner extends StatelessWidget {
                 traineeLve,
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 10), // we can't use appColor.onMain!!!
+                    fontSize: 10,
+                    fontWeight:
+                        FontWeight.bold), // we can't use appColor.onMain!!!
               ),
             ],
           ),
