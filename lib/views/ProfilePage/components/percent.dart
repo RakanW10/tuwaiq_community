@@ -28,6 +28,7 @@ class percent extends StatelessWidget {
             linearStrokeCap: LinearStrokeCap.roundAll,
             progressColor: appColors.onPrimary,
             barRadius: Radius.circular(22),
+            
           ),
         ),
         Text("Lv.${LevelNumber}")

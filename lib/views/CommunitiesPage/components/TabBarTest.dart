@@ -6,19 +6,10 @@ import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 
-
-
-
-
-
 class TabBar1 extends StatefulWidget {
   TabBar1({super.key, this.nameTabs});
 
-  List<Tab>? nameTabs = [
-   
-  ];
-
-  
+  List<Tab>? nameTabs = [];
 
   @override
   State<TabBar1> createState() => _TabBar1State();

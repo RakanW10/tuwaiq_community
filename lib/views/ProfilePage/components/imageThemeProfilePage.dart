@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:tuwaiq_community/views/style.dart';
 
 class ImageThemeProfilePage extends StatelessWidget {
   const ImageThemeProfilePage(
@@ -17,9 +18,10 @@ class ImageThemeProfilePage extends StatelessWidget {
         border: Border.all(color: Color.fromARGB(108, 63, 162, 228), width: 5),
         boxShadow: [
           BoxShadow(
-            color: Colors.black,
-            blurRadius: 15,
-            offset: Offset(1, 1), // Shadow position
+            color: Color.fromARGB(110, 66, 68, 72),
+            spreadRadius: 1,
+            blurRadius: 3,
+            offset: Offset(0, 5),
           ),
         ],
       ),
