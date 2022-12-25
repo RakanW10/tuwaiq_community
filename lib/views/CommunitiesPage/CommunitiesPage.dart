@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
-import 'package:tuwaiq_community/views/CommunitiesPage/components/%20myCommunitiesCard.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/components/myCommunitiesCard.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class CommunitiesPage extends StatefulWidget {
