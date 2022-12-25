@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/liButton.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/litextfield.dart';
+import 'package:tuwaiq_community/views/resetPassword/resetPwd.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 btmSheetFunc() {
@@ -22,7 +23,11 @@ btmSheetFunc() {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               liTextField(title: "رمز التحقق", inputType: TextInputType.number),
-              liButton(btnName: "ارسال", onPressed: (() {}))
+              liButton(
+                  btnName: "ارسال",
+                  onPressed: (() {
+                    Get.offAll(() => ResetPwd());
+                  }))
             ],
           ),
         )),
