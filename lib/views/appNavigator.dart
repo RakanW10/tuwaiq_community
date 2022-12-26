@@ -19,6 +19,7 @@ class AppNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AppNavigatorController>(
+      // why we still need this while we have binding?
       init: AppNavigatorController(),
       builder: (_) => Scaffold(
         body: currentScreen,

@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
-        child: Text("Events page"),
+        child: Text("Home page"),
       ),
     );
   }
