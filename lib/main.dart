@@ -5,6 +5,7 @@ import 'package:tuwaiq_community/views/CommunitiesPage/MyCommunitiesPage.dart';
 import 'package:tuwaiq_community/views/Forgotpwd/forgotpwd.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/CommunitiesPage.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/TabBarTest.dart';
+import 'package:tuwaiq_community/views/LeaderboardPage/leaderboardPage.dart';
 import 'package:tuwaiq_community/views/ProfilePage/profilePage.dart';
 import 'package:tuwaiq_community/views/loginPage/LoginPage.dart';
 
@@ -16,10 +17,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: "DINNextLTArabic",
+      ),
       //  initialRoute: RouterName.loginPage,
       getPages: routerApp,
       locale: const Locale("ar", "SA"),
-      home: LoginPage(),
+      home: LeaderboardPage(),
     );
   }
 }
