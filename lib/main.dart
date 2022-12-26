@@ -8,6 +8,7 @@ import 'package:tuwaiq_community/views/CommunitiesPage/components/TabBarTest.dar
 import 'package:tuwaiq_community/views/HomePage/HomePage.dart';
 import 'package:tuwaiq_community/views/LeaderboardPage/leaderboardPage.dart';
 import 'package:tuwaiq_community/views/ProfilePage/profilePage.dart';
+import 'package:tuwaiq_community/views/appNavigator.dart';
 import 'package:tuwaiq_community/views/loginPage/LoginPage.dart';
 
 void main() => runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       //  initialRoute: RouterName.loginPage,
       getPages: routerApp,
       locale: const Locale("ar", "SA"),
-      home: HomePage(),
+      home: AppNavigator(),
     );
   }
 }
