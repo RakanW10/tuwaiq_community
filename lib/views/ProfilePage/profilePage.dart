@@ -121,7 +121,7 @@ class ProfilePage extends StatelessWidget {
                         ),
                         Container(
                           width: Get.width,
-                          height: 150,
+                          height: 145,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
                             children: [
