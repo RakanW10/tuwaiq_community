@@ -11,8 +11,8 @@ class ImageThemeProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
-      width: 60,
+      height: 70,
+      width: 70,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
         border: Border.all(color: Color.fromARGB(108, 63, 162, 228), width: 5),

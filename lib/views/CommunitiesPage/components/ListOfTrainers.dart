@@ -49,7 +49,7 @@ class ListOfTrainersCaed extends StatelessWidget {
         ConstrainedBox(
           constraints: BoxConstraints(maxHeight: 250),
           child: ListView.builder(
-            itemCount: trainers?.length,
+            itemCount: trainers.length,
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {},

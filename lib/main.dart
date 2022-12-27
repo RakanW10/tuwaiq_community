@@ -27,12 +27,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "DINNextLTArabic",
       ),
-      initialRoute: RouterName.appNavigator,
+      initialRoute: RouterName.loginPage,
       getPages: routerApp,
       locale: const Locale("ar", "SA"),
-
-      
-
     );
   }
 }

@@ -41,7 +41,7 @@ class ProfilePage extends StatelessWidget {
                 child: Column(
                   children: [
                     banner(
-                      imageBackGround: AssetImage("images/Rectangle 1.png"),
+                      imageBackGround: AssetImage("images/Banner.png"),
                       nameTrainee: 'رغد عبدالله',
                       traineeLve: 'الأول على على معسكر fiutter',
                     ),
