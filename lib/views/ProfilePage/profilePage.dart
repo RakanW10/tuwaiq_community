@@ -22,7 +22,7 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "صفحتي",
-          style: TextStyle(fontSize: 30),
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         backgroundColor: appColors.onSecondary,
       ),
@@ -140,8 +140,7 @@ class ProfilePage extends StatelessWidget {
                                 width: 10,
                               ),
                               AchievementsBox(
-                                image:
-                                    SvgPicture.asset("images/Group 898-4.svg"),
+                                image: Image.asset("images/Group 898.png"),
                                 name: 'وسام Swift',
                               ),
                             ],

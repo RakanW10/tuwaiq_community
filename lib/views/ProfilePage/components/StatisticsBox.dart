@@ -109,7 +109,7 @@ class StatisticsBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset("images/Vector-8.png"),
+              Image.asset("images/auto_awesome-24px 1.png"),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

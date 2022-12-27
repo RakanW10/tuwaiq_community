@@ -90,7 +90,7 @@ List trainers = [
   {
     "name": " م. هادي البن سعد",
     "work": " Any thing ;)",
-    "image": "images/image 10.png"
+    "image": "images/hadiImage.png"
   },
   {
     "name": " م. وجدان نايف",
