@@ -28,9 +28,11 @@ class NewsPost extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(17),
-                  child: CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage("images/newsLogo.png"),
+                  child: Container(
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage("images/newsLogo.png"),
+                    ),
                   ),
                 ),
                 Text("أكاديمية طويق",
@@ -41,9 +43,10 @@ class NewsPost extends StatelessWidget {
                         color: Colors.white)),
               ],
             ),
-            Padding(
+            Flexible(flex: 1,
+              child: Container(
               padding: const EdgeInsets.fromLTRB(17, 0, 17, 10),
-              child: Flexible(
+
                 child: Text(
                   newsPostText,
                   style: TextStyle(fontSize: 16, color: Colors.white),

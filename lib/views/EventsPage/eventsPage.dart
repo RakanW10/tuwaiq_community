@@ -41,7 +41,7 @@ class EventsPage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(10, 15, 10, 5),
               child: EventCard(
                   onPressed: () {},
-                  eventName: "الإستجابة للحوادث السيبرانية والتحقيق الرقمي",
+                  eventName: "من وين نبدأ في التسويق؟",
                   eventPrize: "500 نقطة",
                   eventLocation: "اكاديمية طويق قاعة G-10",
                   eventDate: "13:00 - 1/1",
