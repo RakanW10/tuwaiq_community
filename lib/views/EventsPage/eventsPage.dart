@@ -34,7 +34,7 @@ class EventsPage extends StatelessWidget {
                 eventImg: 'images/event1.png',
                 eventLocation: 'اكاديمية طويق',
                 eventName: 'هاكاثون طويق',
-                eventPrize: '100,000 ريال',
+                eventPrize: '100,000 ريال \n',
               ),
             ),
             Padding(

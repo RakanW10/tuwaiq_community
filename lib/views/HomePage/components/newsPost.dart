@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class NewsPost extends StatelessWidget {
-  const NewsPost({super.key, required this.newsPostText, required this.img, required this.onPressed});
+  const NewsPost(
+      {super.key,
+      required this.newsPostText,
+      required this.img,
+      required this.onPressed});
   final String newsPostText;
   final Widget img;
   final void Function() onPressed;
@@ -13,7 +17,7 @@ class NewsPost extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: Get.height - 30,
+        height: Get.height / 2,
         width: Get.width - 30,
         decoration: BoxDecoration(
             color: appColors.onSecondary,

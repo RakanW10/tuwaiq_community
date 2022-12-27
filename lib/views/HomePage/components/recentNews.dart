@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class RecentNews extends StatelessWidget {
-  const RecentNews({super.key, required this.newsText, required this.onPressed});
+  const RecentNews(
+      {super.key, required this.newsText, required this.onPressed});
   final String newsText;
   final void Function() onPressed;
 
