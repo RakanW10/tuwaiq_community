@@ -2,29 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/MyCommunitiesPage.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/TuCommunity.dart';
+import 'package:tuwaiq_community/views/GlobalComponents/TabBarTest.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/myCommunitiesCard.dart';
+import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-class CommunitiesPage extends StatefulWidget {
-  @override
-  _StackOverState createState() => _StackOverState();
-}
-
-class _StackOverState extends State<CommunitiesPage>
-    with SingleTickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    _tabController = TabController(length: 2, vsync: this);
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _tabController.dispose();
-  }
+class CommunitiesPage extends StatelessWidget {
+  const CommunitiesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +22,6 @@ class _StackOverState extends State<CommunitiesPage>
           style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
-
-      
       body: Container(
         alignment: Alignment.center,
         height: Get.height,
@@ -45,88 +29,68 @@ class _StackOverState extends State<CommunitiesPage>
         decoration: const BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 15, right: 15, left: 15),
-          child: Column(
-            children: [
-              Container(
-                height: 30,
-                decoration: BoxDecoration(
-                  color: appColors.onSecondary,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: TabBar(
-                  controller: _tabController,
-                  indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      25.0,
-                    ),
-                    color: appColors.onMain,
+        child: TabBarCom(
+          tabName: [
+            Tab(
+              text: "مجتمعاتي",
+            ),
+            Tab(
+              text: "طويق",
+            )
+          ],
+          numberTab: 2,
+          TabbarViweWidget: [
+// ---------------------------------------Widget 1-----------------------------------
+
+            GridView.builder(
+              itemCount: myCommunity.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1,
+                childAspectRatio: 3,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return Expanded(
+                  flex: 1,
+                  child: Column(
+                    children: [
+                      Spacing(height: 10),
+                      MyCommunitiesCard(
+                        image: myCommunity[index]["image"],
+                        nameCommunity: myCommunity[index]["nameCommunity"],
+                        onTapCard: () => Get.to(MyCommunitiesPage(),
+                            arguments: myCommunity[index]),
+                      ),
+                    ],
                   ),
-                  labelColor: appColors.onSecondary,
-                  unselectedLabelColor: appColors.onMain,
-                  tabs: [
-                    Tab(
-                      text: 'مجتمعاتي',
-                    ),
-                    Tab(
-                      text: 'طويق',
-                    ),
-                  ],
-                ),
+                );
+              },
+            ),
+
+// ---------------------------------------Widget 2-----------------------------------
+
+            GridView.builder(
+              itemCount: tuCommunity.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 1,
+                childAspectRatio: 3,
               ),
-
-//-------------------------------------------------------------------------------------
-
-              Expanded(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    GridView.builder(
-                      padding: EdgeInsets.only(top: 30),
-                      itemCount: myCommunity.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3,
+              itemBuilder: (BuildContext context, int index) {
+                return Expanded(
+                  flex: 1,
+                  child: Column(
+                    children: [
+                      Spacing(height: 10),
+                      MyCommunitiesCard(
+                        onTapCard: () => Get.to(TuCommunity() , arguments: tuCommunity[index]),
+                        image: tuCommunity[index]["image"],
+                        nameCommunity: tuCommunity[index]["nameCommunity"],
                       ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: MyCommunitiesCard(
-                            image: myCommunity[index]["image"],
-                            nameCommunity: myCommunity[index]["nameCommunity"],
-                          ),
-                        );
-                      },
-                    ),
-
-
-//-----------------------------------------------------------------------------------
-
-
-
-                    GridView.builder(
-                      padding: EdgeInsets.only(top: 30),
-                      itemCount: tuCommunity.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3,
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: MyCommunitiesCard(
-                            image: tuCommunity[index]["image"],
-                            nameCommunity: tuCommunity[index]["nameCommunity"],
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );

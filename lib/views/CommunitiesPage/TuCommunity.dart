@@ -13,8 +13,8 @@ import 'package:tuwaiq_community/views/GlobalComponents/TabBarTest.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-class MyCommunitiesPage extends StatelessWidget {
-  const MyCommunitiesPage({super.key});
+class TuCommunity extends StatelessWidget {
+  const TuCommunity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +61,9 @@ class MyCommunitiesPage extends StatelessWidget {
                       "الرئيسية",
                     ),
                     Tab(text: "المشاركين"),
-                    Tab(text: "التحديات"),
-                    Tab(text: "المهام")
+                   
                   ],
-                  numberTab: 4,
+                  numberTab: 2,
                   TabbarViweWidget: [
                     //--------------------------------Widget 1-------------------------------
 
@@ -83,57 +82,10 @@ class MyCommunitiesPage extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                     Center(child: Text("2"),),
+                    Center(child: Text("2"),)
 
-                    //----------------------------------Widget 3-------------------------------
-
-                    GridView.builder(
-                      itemCount: Mychallenges?.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3,
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Expanded(
-                          flex: 1,
-                          child: Column(
-                            children: [
-                              MychallengesTestCard(
-                                image: Mychallenges![index]["image"],
-                                nameChallenges: Mychallenges![index]
-                                    ["challenges"],
-                                points: Mychallenges![index]['points'],
-                                coin: Mychallenges![index]['coin'],
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
-
-                    //-------------------------------Widget 4-------------------------------
-                    GridView.builder(
-                      itemCount: MyTasks?.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3,
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Expanded(
-                          flex: 1,
-                          child: Column(
-                            children: [
-                              MyTaskCard(
-                                image: MyTasks![index]["image"],
-                                nameTask
-                                : MyTasks![index]["challenges"],
-                                points: MyTasks![index]['points'],
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
+                    
+                  
                   ],
                 ),
               )

@@ -18,24 +18,24 @@ class BoxtDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       //----------------------------Style BoxtDescription------------------------------------
-      height: Get.height / 4,
+      height: Get.height / 3.4,
       width: Get.width - 20,
       decoration: BoxDecoration(
         color: appColors.onSecondary,
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 113, 111, 111),
+            color: Color.fromARGB(110, 66, 68, 72),
             spreadRadius: 1,
             blurRadius: 3,
-            offset: Offset(0, 1),
+            offset: Offset(0, 4),
           ),
         ],
       ),
 //------------------------------Contant BoxtDescription------------------------------------
 
       child: Column(children: [
-        Spacing(height: 10),
+        Spacing(height: 20),
 
 //-----------------------------------------First--------------------------------------------
 //
@@ -51,7 +51,7 @@ class BoxtDescription extends StatelessWidget {
         ),
 
 //-----------------------------------------The second--------------------------------------------
-
+        Spacing(height: 10),
         Container(
             constraints: const BoxConstraints(
               maxWidth: 300,
@@ -98,28 +98,26 @@ class BoxtDescription extends StatelessWidget {
               ],
             ),
 
-  //-----------------------------------------------
+            //-----------------------------------------------
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ImageIcon(
-                  AssetImage("images/training-online-icon 1.png"),
+                  AssetImage("images/Group-3.png"),
                   size: 50,
                   color: appColors.onMain,
                 ),
                 SizedBox(width: 20),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 50),
-                      child: TextStyleMyApp(
-                        colorText: appColors.onMain,
-                        fontSizeText: 20,
-                        text: "الوقت",
-                        fontWeightMyApp: FontWeight.w100,
-                      ),
+                    TextStyleMyApp(
+                      colorText: appColors.onMain,
+                      fontSizeText: 20,
+                      text: "الوقت",
+                      fontWeightMyApp: FontWeight.w100,
                     ),
                     Spacing(height: 5),
                     TextStyleMyApp(
@@ -131,7 +129,7 @@ class BoxtDescription extends StatelessWidget {
                   ],
                 )
               ],
-            )
+            ),
           ],
         ),
       ]),

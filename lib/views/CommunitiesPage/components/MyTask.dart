@@ -1,16 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-class MyCommunitiesCard extends StatelessWidget {
-  MyCommunitiesCard(
-      {super.key, this.image, this.nameCommunity, this.onTapCard});
+class MyTaskCard extends StatelessWidget {
+  MyTaskCard(
+      {super.key,
+      this.image,
+      this.nameTask,
+      this.onTapCard,
+      this.points});
   final String? image;
-  final String? nameCommunity;
-  Function()? onTapCard;
+  final String? nameTask;
+  final String? Function()? onTapCard;
+  String? points;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +33,7 @@ class MyCommunitiesCard extends StatelessWidget {
               ),
             ]),
         child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Expanded(
               child: Image.asset(
@@ -45,9 +46,23 @@ class MyCommunitiesCard extends StatelessWidget {
                 constraints: const BoxConstraints(
                   maxWidth: 300,
                 ),
-                child: Text(
-                  nameCommunity!,
-                  style: TextStyle(color: appColors.onMain, fontSize: 15.5),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      nameTask!,
+                      style: TextStyle(
+                          color: appColors.onMain,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      points!,
+                      style: TextStyle(color: appColors.onMain, fontSize: 16),
+                    ),
+                   
+                  ],
                 ),
               ),
             ),
