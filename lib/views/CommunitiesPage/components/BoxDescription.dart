@@ -54,7 +54,7 @@ class BoxtDescription extends StatelessWidget {
         Spacing(height: 10),
         Container(
             constraints: const BoxConstraints(
-              maxWidth: 300,
+              maxWidth: 350,
             ),
             child: TextStyleMyApp(
               colorText: appColors.onMain,

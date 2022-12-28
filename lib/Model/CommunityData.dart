@@ -4,45 +4,19 @@ List myCommunity = [
     "nameCommunity":
         "معسكر تطوير تطبيقات الهواتف الذكية والويب باستخدام Flutter",
     "image": "images/image 1.png",
-    "trainers": {
-      {
-        "name": " فهد",
-        "work": " Swift UIKit & SwiftUi, Dart & Flutter",
-        "image": "images/image 10.png"
-      },
-      {
-        "name": " فهد",
-        "work": " Swift UIKit & SwiftUi, Dart & Flutter",
-        "image": "images/image 11.jpg"
-      },
-      {
-        "name": " فهد",
-        "work": " Swift UIKit & SwiftUi, Dart & Flutter",
-        "image": "images/image 10.png"
-      }
-    }
+    "description": "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة.",
+    "class": "G-07",
+    "time": "15:00-10:00"
+   
   },
   {
     "id": "2",
     "nameCommunity": "معسكر تصميم الواجهات وتجربة المستخدم UI/UX",
     "image": "images/image 2.png",
-    "trainers": {
-      {
-        "name": " فهد",
-        "work": " Swift UIKit & SwiftUi, Dart & Flutter",
-        "image": "images/image 10.png"
-      },
-      {
-        "name": " فهد",
-        "work": " Swift UIKit & SwiftUi, Dart & Flutter",
-        "image": "images/image 10.png"
-      },
-      {
-        "name": " فهد",
-        "work": " Swift UIKit & SwiftUi, Dart & Flutter",
-        "image": "images/image 10.png"
-      }
-    }
+     "description": "يستهدف المعسكر المهتمين في مجال تصميم واجهات وتجربة المستخدم، لتزويدهم بالمعرفة الأساسية والخطوات المتّبعة في بناء واجهة وتجربة مستخدم متكاملة؛ من خلال مجموعة من المراحل. .",
+    "class": "G-09",
+    "time": "15:00-10:00"
+ 
   }
 ];
 
@@ -51,33 +25,51 @@ List tuCommunity = [
     "id": "1",
     "nameCommunity":
         "معسكر تطوير تطبيقات الهواتف الذكية والويب باستخدام Flutter",
-    "image": "images/image 1.png"
+    "image": "images/image 1.png",
+    "description": "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة.",
+    "class": "G-07",
+    "time": "15:00-10:00"
   },
   {
     "id": "2",
     "nameCommunity": "معسكر تصميم الواجهات وتجربة المستخدم UI/UX",
-    "image": "images/image 2.png"
+    "image": "images/image 2.png",
+     "description": "يستهدف المعسكر المهتمين في مجال تصميم واجهات وتجربة المستخدم، لتزويدهم بالمعرفة الأساسية والخطوات المتّبعة في بناء واجهة وتجربة مستخدم متكاملة؛ من خلال مجموعة من المراحل. .",
+    "class": "G-09",
+    "time": "15:00-10:00"
   },
   {
     "id": "3",
     "nameCommunity": "معسكر تطوير تطبيقات Android",
-    "image": "images/image 3.png"
+    "image": "images/image 3.png",
+     "description": "ستتعلم من خلال هذا المعسكر عن أساسيات لغة Kotlin المعتمدة من Google في تطوير تطبيقات Android؛ لإنشاء تطبيقات احترافية ومتقدمة.",
+    "class": "G-05",
+    "time": "15:00-10:00"
   },
   {
     "id": "4",
     "nameCommunity": " تطوير تطبيقات iOS باستخدام SwiftUI ",
-    "image": "images/image 4.png"
+    "image": "images/image 4.png",
+    "description": "معسكر برمجي يهدف إلى تمكين المتدربين من تطوير التطبيقات على مختلف منصات Apple، باستخدام لغة Swift وإطار عمل SwiftUI.",
+    "class": "G-06",
+    "time": "15:00-10:00"
   },
   {
     "id": "5",
     "nameCommunity": "دورة التصميم ثلاثي الأبعاد",
-    "image": "images/image 8.png"
+    "image": "images/image 8.png",
+    "description": "معسكر برمجي يهدف إلى تمكين المتدربين من تطوير التطبيقات على مختلف منصات Apple، باستخدام لغة Swift وإطار عمل SwiftUI.",
+    "class": "G-02",
+    "time": "15:00-10:00"
   },
   {
     "id": "6",
     "nameCommunity":
         "دورة البرمجة بلغة JAVA باستخدام إطار عمل Spring Boot (للمتقدمين)",
-    "image": "images/image 5.png"
+    "image": "images/image 5.png",
+    "description": "معسكر برمجي يهدف إلى تمكين المتدربين من تطوير التطبيقات على مختلف منصات Apple، باستخدام لغة Swift وإطار عمل SwiftUI.",
+    "class": "G-08",
+    "time": "15:00-10:00"
   },
 ];
 
@@ -105,18 +97,21 @@ List? Mychallenges = [
     "challenges": "رفع بيانات على Database",
     "points": "200 نقطة",
     "coin": "20",
+    "description": "ارفع بيانات المستخدم (اسم، عمر، و رقم الجوال) على Database بعد التحقق من المستخدم بستعمال رقم الجول. "
   },
   {
     "image": "images/Group-4.png",
     "challenges": "عملية تحقق",
     "points": "200 نقطة",
     "coin": "20",
+     "description": "ارفع بيانات المستخدم (اسم، عمر، و رقم الجوال) على Database بعد التحقق من المستخدم بستعمال رقم الجول. "
   },
   {
     "image": "images/wrong-icon 1.png",
     "challenges": "صفحة تسجيل دخول",
     "points": "200 نقطة",
     "coin": "20",
+     "description": "ارفع بيانات المستخدم (اسم، عمر، و رقم الجوال) على Database بعد التحقق من المستخدم بستعمال رقم الجول. "
   },
 ];
 

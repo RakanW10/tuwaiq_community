@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -8,6 +10,7 @@ import 'package:tuwaiq_community/views/CommunitiesPage/components/BoxDescription
 import 'package:tuwaiq_community/views/CommunitiesPage/components/ListOfTrainers.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/MyTask.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/MychallengesCard.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/components/ShowDiloge.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/AppBar.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/TabBarTest.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
@@ -37,18 +40,23 @@ class MyCommunitiesPage extends StatelessWidget {
             children: [
 //-------------------------------Name MyCommunities and Icon---------------------------------------
               Spacing(height: 20),
-              Image(
-                image: AssetImage(Get.arguments["image"]),
-              ),
-              Container(
+              Column(
+                children: [
+                  Image(
+                    image: AssetImage(Get.arguments["image"]),
+                  ),
+                   Container(
                 constraints: const BoxConstraints(
-                  maxWidth: 230,
+                  maxWidth: 250,
                 ),
                 child: Text(
                   Get.arguments["nameCommunity"],
                   style: TextStyle(color: appColors.onMain, fontSize: 18),
                 ),
-              ),
+                ),
+                ],
+                ),
+             
               Spacing(height: 20),
 
 //-----------------------------------TabBar Nanes----------------------------------------
@@ -57,8 +65,7 @@ class MyCommunitiesPage extends StatelessWidget {
                 child: TabBarCom(
                   tabName: [
                     Tab(
-                        text:
-                      "الرئيسية",
+                      text: "الرئيسية",
                     ),
                     Tab(text: "المشاركين"),
                     Tab(text: "التحديات"),
@@ -71,10 +78,10 @@ class MyCommunitiesPage extends StatelessWidget {
                     ListView(
                       children: [
                         BoxtDescription(
-                          description:
-                              "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة.",
-                          timeClass: "15:00-10:00",
-                          classNumber: "G-07",
+                          description:Get.arguments["description"],
+                            
+                          timeClass: Get.arguments["time"],
+                          classNumber: Get.arguments["class"],
                         ),
                         Spacing(height: 20),
                         ListOfTrainersCaed()
@@ -83,7 +90,9 @@ class MyCommunitiesPage extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                     Center(child: Text("2"),),
+                    Center(
+                      child: Text("2"),
+                    ),
 
                     //----------------------------------Widget 3-------------------------------
 
@@ -99,6 +108,9 @@ class MyCommunitiesPage extends StatelessWidget {
                           child: Column(
                             children: [
                               MychallengesTestCard(
+                                onTapCard: () {
+                                  sh(context: context , i:index );
+                                },
                                 image: Mychallenges![index]["image"],
                                 nameChallenges: Mychallenges![index]
                                     ["challenges"],
@@ -125,8 +137,7 @@ class MyCommunitiesPage extends StatelessWidget {
                             children: [
                               MyTaskCard(
                                 image: MyTasks![index]["image"],
-                                nameTask
-                                : MyTasks![index]["challenges"],
+                                nameTask: MyTasks![index]["challenges"],
                                 points: MyTasks![index]['points'],
                               ),
                             ],
@@ -142,3 +153,5 @@ class MyCommunitiesPage extends StatelessWidget {
     );
   }
 }
+
+
