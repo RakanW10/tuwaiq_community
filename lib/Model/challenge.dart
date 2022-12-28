@@ -1,9 +1,9 @@
-enum ChallengeState { inprograss, finished }
+enum ChallengeState { inprograss, finishedCorrect, finishedWrong, inGradeing }
 
 class Challenge {
   String uid;
   String title;
-  Map<String,int> ponitsRewards;
+  Map<String, int> ponitsRewards;
   String state = ChallengeState.inprograss.name;
   DateTime initDuration;
   String description;
@@ -28,7 +28,11 @@ class Challenge {
     return tempTask;
   }
 
-  taskFinish() {
-    state = ChallengeState.finished.name;
+  void ChallengeFinishCorrect() {
+    state = ChallengeState.finishedCorrect.name;
+  }
+
+  void ChallegeFinishedWrong() {
+    state = ChallengeState.finishedWrong.name;
   }
 }

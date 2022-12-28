@@ -1,4 +1,4 @@
-enum TaskState { inprograss, finished }
+enum TaskState { inprograss, finishedCorrect, finishedWrong, inGradeing }
 
 class Task {
   String uid;
@@ -28,7 +28,11 @@ class Task {
     return tempTask;
   }
 
-  taskFinish() {
-    state = TaskState.finished.name;
+  void taskFinishCorrect() {
+    state = TaskState.finishedCorrect.name;
+  }
+
+  void taskFinishWrong() {
+    state = TaskState.finishedWrong.name;
   }
 }
