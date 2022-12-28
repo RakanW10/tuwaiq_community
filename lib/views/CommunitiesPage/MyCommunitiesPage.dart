@@ -30,7 +30,7 @@ class MyCommunitiesPage extends StatelessWidget {
           alignment: Alignment.center,
           height: Get.height,
           width: Get.width,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             gradient: appColors.backgroundColor,
           ),
           child: Column(

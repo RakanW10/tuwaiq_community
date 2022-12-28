@@ -40,7 +40,7 @@ class ResetPwd extends StatelessWidget {
       body: Container(
         width: Get.width,
         height: Get.height,
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
         child: ListView(

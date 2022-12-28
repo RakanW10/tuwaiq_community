@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
       body: Container(
         width: Get.width,
         height: Get.height,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
         child: ListView(
@@ -93,11 +93,12 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
-                            onPressed: () {
-                              Get.offAll(() => AppNavigator());
-                            },
-                            btnName: "تسجيل الدخول  ",
-                            btnIcon: Icons.login),
+                          onPressed: () {
+                            Get.offAll(() => AppNavigator());
+                          },
+                          btnName: "تسجيل الدخول  ",
+                          btnIcon: Icons.login,
+                        ),
                       ),
                     ],
                   ),
