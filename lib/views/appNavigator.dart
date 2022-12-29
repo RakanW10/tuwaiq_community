@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:tuwaiq_community/controllers/appNavigatorController.dart';
+import 'package:tuwaiq_community/controllers/leaderboardController.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/CommunitiesPage.dart';
 import 'package:tuwaiq_community/views/EventsPage/eventsPage.dart';
 import 'package:tuwaiq_community/views/HomePage/HomePage.dart';
@@ -18,6 +20,8 @@ class AppNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LeaderboardController _leaderboardController =
+        Get.put(LeaderboardController());
     return GetBuilder<AppNavigatorController>(
       // why we still need this while we have binding?
       init: AppNavigatorController(),

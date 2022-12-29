@@ -31,4 +31,5 @@ abstract class RouterName {
   static const String loginPage = "/LoginPage";
   static const String profilePage = "/ProfilePage";
   static const String communitiesPage = "/communitiesPage";
+  static const String leaderboardPage = "/leaderboardPage";
 }
