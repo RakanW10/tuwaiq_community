@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tuwaiq_community/views/Forgotpwd/components/veifyBtmsheet.dart';
+import 'package:tuwaiq_community/services/firebaseAuth.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/liButton.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/litextfield.dart';
-import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
-
-// svg picture has some errors, we need to fix the logo SVG pic
-//font edits still in progress
 
 class Forgetpwd extends StatelessWidget {
-  const Forgetpwd({super.key});
+  Forgetpwd({super.key});
+  TextEditingController emailcontrol = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +35,7 @@ class Forgetpwd extends StatelessWidget {
       body: Container(
         width: Get.width,
         height: Get.height,
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
         child: ListView(
@@ -67,7 +63,7 @@ class Forgetpwd extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "نسيت كلمة المرور؟",
+                      "استعادة كلمة المرور",
                       style:
                           TextStyle(color: appColors.onSecondary, fontSize: 20),
                     )
@@ -89,15 +85,16 @@ class Forgetpwd extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
                         child: liTextField(
-                            title: "رقم الجوال",
-                            hint: "(966+)",
-                            inputType: TextInputType.number),
+                           passwordType: false,
+                            controller: emailcontrol,
+                            title: "البريد الالكتروني",
+                            inputType: TextInputType.emailAddress),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
                             onPressed: () {
-                              btmSheetFunc();
+                              ResetPassMethod(emailAddress: emailcontrol.text);
                             },
                             btnName: "استعادة كلمة المرور  ",
                             btnIcon: Icons.message),

@@ -11,11 +11,10 @@ class DotSlider extends StatefulWidget {
 }
 
 class _DotSliderState extends State<DotSlider> {
+  int current = 0;
+  final CarouselController ccontroller = CarouselController();
   @override
   Widget build(BuildContext context) {
-    final List<String> numberList = ['1', '2', '3', '4'];
-    int current = 0;
-    final CarouselController ccontroller = CarouselController();
     final List<Widget> items = [
       RecentNews(
         newsText:
@@ -66,11 +65,10 @@ class _DotSliderState extends State<DotSlider> {
         ),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: numberList.asMap().entries.map((entry) {
+            children: items.asMap().entries.map((entry) {
               return GestureDetector(
                 onTap: () {
-                  print(numberList.asMap().entries.map(((e) => entry)));
-                  // ccontroller.animateToPage(entry.key);
+                  ccontroller.animateToPage(entry.key);
                 },
                 child: Container(
                   width: 7,

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:tuwaiq_community/controllers/appNavigatorController.dart';
+import 'package:tuwaiq_community/controllers/leaderboardController.dart';
+import 'package:tuwaiq_community/controllers/likeBTN.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/CommunitiesPage.dart';
 import 'package:tuwaiq_community/views/EventsPage/eventsPage.dart';
 import 'package:tuwaiq_community/views/HomePage/HomePage.dart';
@@ -18,6 +21,10 @@ class AppNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LeaderboardController _leaderboardController =
+        Get.put(LeaderboardController());
+    Get.put(LikeBTN());
+
     return GetBuilder<AppNavigatorController>(
       // why we still need this while we have binding?
       init: AppNavigatorController(),
@@ -73,27 +80,27 @@ Widget bottomNavigationBar() {
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.account_circle_outlined)),
             icon: Icon(Icons.account_circle_outlined),
-            label: "account",
+            label: "حسابي",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.groups)),
             icon: Icon(Icons.groups),
-            label: "groups",
+            label: "المجتمعات",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.event)),
             icon: Icon(Icons.event),
-            label: "event",
+            label: "الفعاليات",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.leaderboard)),
             icon: Icon(Icons.leaderboard),
-            label: "leaderboard",
+            label: "لائحة المتصدرين",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.home)),
             icon: Icon(Icons.home),
-            label: "home",
+            label: "الصفحة الرئيسية",
           ),
         ]),
   );

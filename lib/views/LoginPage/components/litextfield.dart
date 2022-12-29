@@ -4,16 +4,25 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class liTextField extends StatelessWidget {
-  liTextField({super.key, required this.title, this.hint, this.inputType});
+  liTextField(
+      {super.key,
+      required this.title,
+      this.hint,
+      this.inputType,
+      this.controller, required this.passwordType});
   final String title;
   final String? hint;
   final TextInputType? inputType;
+  TextEditingController? controller;
+  bool passwordType;
 
   //hint is optional
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: passwordType,
+      controller: controller,
       keyboardType: inputType,
       textAlign: TextAlign.right,
       decoration: InputDecoration(
