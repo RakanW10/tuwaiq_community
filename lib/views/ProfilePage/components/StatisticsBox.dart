@@ -40,19 +40,23 @@ class StatisticsBox extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 250, top: 20),
-            child: Text(
-              "الإحصائيات",
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: appColors.onMain),
+            child: Expanded(
+              child: Text(
+                "الإحصائيات",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: appColors.onMain),
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 150, top: 10),
-            child: Text(
-              "ترتيبك في لائحة المتصدرين",
-              style: TextStyle(fontSize: 18, color: appColors.onMain),
+            child: Expanded(
+              child: Text(
+                "ترتيبك في لائحة المتصدرين",
+                style: TextStyle(fontSize: 16, color: appColors.onMain),
+              ),
             ),
           ),
           SizedBox(
@@ -61,14 +65,18 @@ class StatisticsBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset("images/tuwaiqIconW 1.png"),
+              ImageIcon(
+                AssetImage("images/tuwaiqIconW 1.png"),
+                size: 40,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "طويق",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),
@@ -81,14 +89,18 @@ class StatisticsBox extends StatelessWidget {
                   )
                 ],
               ),
-              Image.asset("images/Vector-7.png"),
+              ImageIcon(
+                AssetImage("images/Vector-7.png"),
+                size: 30,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "المعسكر",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),
@@ -109,14 +121,18 @@ class StatisticsBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset("images/Vector-8.png"),
+              ImageIcon(
+                AssetImage("images/auto_awesome-24px 1.png"),
+                size: 30,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "الجوائز",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),
@@ -129,14 +145,18 @@ class StatisticsBox extends StatelessWidget {
                   )
                 ],
               ),
-              Image.asset("images/Vector-9.png"),
+              ImageIcon(
+                AssetImage("images/Vector-9.png"),
+                size: 30,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "الزيارات",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),

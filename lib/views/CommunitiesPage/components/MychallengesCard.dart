@@ -1,23 +1,27 @@
+import 'dart:ui';
+
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tuwaiq_community/controllers/stateCh.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/MyCommunitiesPage.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class MychallengesTestCard extends StatelessWidget {
   MychallengesTestCard(
       {super.key,
-      this.image,
+      this.state,
       this.nameChallenges,
       this.onTapCard,
       this.coin = "",
-      
-
       this.points});
-  final String? image;
+  Widget? state;
   final String? nameChallenges;
   final String? Function()? onTapCard;
   String coin;
-  
+
   String? points;
+  StateChall timer = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +44,7 @@ class MychallengesTestCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Expanded(
-              child: Image.asset(
-                image!,
-              ),
-            ),
+            Expanded(child: state!),
             Expanded(
               flex: 2,
               child: Container(
@@ -97,3 +97,5 @@ class MychallengesTestCard extends StatelessWidget {
     );
   }
 }
+
+

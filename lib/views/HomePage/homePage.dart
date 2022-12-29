@@ -24,31 +24,31 @@ class HomePage extends StatelessWidget {
         alignment: Alignment.center,
         height: Get.height,
         width: Get.width,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
         child: ListView(
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(0, 16, 20, 10),
               child: Text("أهم الأحداث",
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      // color: Colors.white,
-                      color: Colors.black)),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: appColors.onMain,
+                  )),
             ),
             DotSlider(),
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(0, 10, 20, 10),
               child: Text("الأحداث",
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      //color: Colors.white,
-                      color: Colors.black)),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: appColors.onMain,
+                  )),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),

@@ -16,7 +16,7 @@ class ListOfTrainersCaed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height / 3,
+      height: Get.height / 2.6,
       width: Get.width - 20,
       decoration: BoxDecoration(
         color: appColors.onSecondary,
@@ -49,7 +49,7 @@ class ListOfTrainersCaed extends StatelessWidget {
         ConstrainedBox(
           constraints: BoxConstraints(maxHeight: 250),
           child: ListView.builder(
-            itemCount: trainers?.length,
+            itemCount: trainers.length,
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {},

@@ -30,7 +30,7 @@ class TuCommunity extends StatelessWidget {
           alignment: Alignment.center,
           height: Get.height,
           width: Get.width,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             gradient: appColors.backgroundColor,
           ),
           child: Column(
@@ -45,7 +45,7 @@ class TuCommunity extends StatelessWidget {
                   maxWidth: 230,
                 ),
                 child: Text(
-                  Get.arguments["nameCommunity"],
+                  Get.arguments["nameCommunity"],textAlign: TextAlign.center,
                   style: TextStyle(color: appColors.onMain, fontSize: 18),
                 ),
               ),

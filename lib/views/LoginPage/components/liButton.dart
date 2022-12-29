@@ -19,7 +19,7 @@ class liButton extends StatelessWidget {
         height: 52,
         width: 260,
         decoration: BoxDecoration(
-          color: appColors.onPrimary,
+          color: Color(0xFF009FAE),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(60),
               topRight: Radius.circular(100),
@@ -30,7 +30,7 @@ class liButton extends StatelessWidget {
               color: Colors.grey.withOpacity(0.8),
               spreadRadius: 1,
               blurRadius: 3,
-                 offset: Offset(0, 3),
+              offset: Offset(0, 3),
             ),
           ],
         ),
@@ -40,9 +40,10 @@ class liButton extends StatelessWidget {
             Text(
               btnName,
               style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
             Icon(
               btnIcon,

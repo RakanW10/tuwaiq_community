@@ -82,7 +82,7 @@ List trainers = [
   {
     "name": " م. هادي البن سعد",
     "work": " Any thing ;)",
-    "image": "images/image 10.png"
+    "image": "images/hadiImage.png"
   },
   {
     "name": " م. وجدان نايف",
@@ -117,28 +117,33 @@ List? Mychallenges = [
 
 List? MyTasks = [
   {
-    "image": "images/Timer.png",
+    "image": "images/Timer-2.png",
     "challenges": "الربط مع قاعدة البينات",
     "points": "200 نقطة",
+    "description": "أنشاء مشروع Flutter، واربطه بمشروع Firebase جديد، بعد ذلك اختبر الاتصال برفع dummy data."
   },
   {
     "image": "images/Group-4.png",
     "challenges": "تطبيق مفهوم MVC",
     "points": "200 نقطة",
+    "description": "أنشاء مشروع Flutter، واربطه بمشروع Firebase جديد، بعد ذلك اختبر الاتصال برفع dummy data."
   },
   {
     "image": "images/wrong-icon 1.png",
     "challenges": "محاكات تصميم Figma",
     "points": "200 نقطة",
+    "description": "أنشاء مشروع Flutter، واربطه بمشروع Firebase جديد، بعد ذلك اختبر الاتصال برفع dummy data."
   },
   {
     "image": "images/Group-4.png",
     "challenges": "أساسيات Flutter",
     "points": "200 نقطة",
+    "description": "أنشاء مشروع Flutter، واربطه بمشروع Firebase جديد، بعد ذلك اختبر الاتصال برفع dummy data."
   },
   {
     "image": "images/Group-4.png",
     "challenges": "اول برنامج Flutter",
     "points": "200 نقطة",
+    "description": "أنشاء مشروع Flutter، واربطه بمشروع Firebase جديد، بعد ذلك اختبر الاتصال برفع dummy data."
   },
 ];

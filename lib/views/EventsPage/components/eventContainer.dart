@@ -30,9 +30,9 @@ class EventCard extends StatelessWidget {
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 5,
-                blurRadius: 7,
+                color: Colors.black.withOpacity(0.5),
+                spreadRadius: 2,
+                blurRadius: 5,
                 offset: Offset(0, 3),
               ),
             ],
@@ -66,7 +66,7 @@ class EventCard extends StatelessWidget {
                         width: Get.width / 3.3,
                         child: Text(
                           eventName,
-                          maxLines: 2,
+                          maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           softWrap: true,
                           style: TextStyle(
@@ -153,23 +153,20 @@ class EventCard extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Container(
-                  width: Get.width,
-                  child: Center(
-                      child: Text(
-                    "سجل الآن",
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                  )),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
-                    color: appColors.onPrimary.withGreen(220),
-                  ),
-                ),
+            const Spacer(),
+            Container(
+              height: Get.width / 8,
+              width: Get.width,
+              child: Center(
+                  child: Text(
+                "سجل الآن",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              )),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15)),
+                color: appColors.onPrimary.withGreen(220),
               ),
             )
           ],

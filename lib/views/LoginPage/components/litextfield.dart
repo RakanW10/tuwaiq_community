@@ -17,20 +17,22 @@ class liTextField extends StatelessWidget {
       keyboardType: inputType,
       textAlign: TextAlign.right,
       decoration: InputDecoration(
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          enabledBorder: const OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: appColors.onSecondary, width: 1.3),
-              borderRadius: BorderRadius.all(Radius.circular(11))),
-          focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(11)),
-            borderSide:
-                const BorderSide(color: appColors.onSecondary, width: 1.3),
-          ),
-          hintText: hint,
-          labelText: title,
-          hintStyle: TextStyle(color: appColors.onPrimary),
-          labelStyle: TextStyle(color: appColors.onPrimary, fontSize: 23)),
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: appColors.onSecondary, width: 1.3),
+            borderRadius: BorderRadius.all(Radius.circular(11))),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(11)),
+          borderSide: BorderSide(color: appColors.onSecondary, width: 1.3),
+        ),
+        hintText: hint,
+        labelText: title,
+        hintStyle: TextStyle(color: appColors.onPrimary),
+        labelStyle: TextStyle(
+          color: Color(0xFF009FAE),
+          fontSize: 23,
+        ),
+      ),
     );
   }
 }

@@ -13,7 +13,7 @@ class AchievementsBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 130,
+        height: Get.height / 10,
         width: Get.width / 3.2,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
