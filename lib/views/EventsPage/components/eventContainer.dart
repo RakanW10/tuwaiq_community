@@ -26,7 +26,7 @@ class EventCard extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: Get.height / 2,
+        height: Get.height / 2.5,
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
