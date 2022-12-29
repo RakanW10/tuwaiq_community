@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tuwaiq_community/services/firebaseAuth.dart';
 import 'package:tuwaiq_community/views/Forgotpwd/forgotpwd.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/liButton.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/litextfield.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
-import 'package:tuwaiq_community/views/appNavigator.dart';
 import 'package:tuwaiq_community/views/style.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
-
-// svg picture has some errors, we need to fix the logo SVG pic
-//font edits still in progress
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+  TextEditingController emailcontrol = TextEditingController();
+  TextEditingController passcontrol = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,6 @@ class LoginPage extends StatelessWidget {
                 height: Get.width / 2.6,
                 width: Get.width / 2.6,
                 child: Image.asset("images/appLogo.png")),
-            //SvgPicture.asset("images/tlogo.svg")
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 22),
               child: Padding(
@@ -70,11 +67,19 @@ class LoginPage extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
-                        child: liTextField(title: "اسم المستخدم"),
+                        child: liTextField(
+                         passwordType: false,
+                          title: "اسم المستخدم",
+                          controller: emailcontrol,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 30, 0, 10),
-                        child: liTextField(title: "كلمة المرور"),
+                        child: liTextField(
+                          title: "كلمة المرور",
+                          controller: passcontrol,
+                         passwordType: true
+                        ),
                       ),
                       Align(
                         alignment: Alignment.centerLeft,
@@ -94,7 +99,16 @@ class LoginPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
                           onPressed: () {
-                            Get.offAll(() => AppNavigator());
+                            emailcontrol.text.isNotEmpty
+                                ? SignInMethod(
+                                    emailAddress: emailcontrol.text,
+                                    password: passcontrol.text)
+                                : Get.snackbar(
+                                    backgroundColor:
+                                        appColors.onMain.withOpacity(0.5),
+                                    'خطأ في التسجيل',
+                                    'يجب ان يكون لديك حساب لتسجيل الدخول',
+                                    snackPosition: SnackPosition.BOTTOM);
                           },
                           btnName: "تسجيل الدخول  ",
                           btnIcon: Icons.login,

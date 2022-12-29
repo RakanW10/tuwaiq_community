@@ -40,7 +40,7 @@ class ResetPwd extends StatelessWidget {
       body: Container(
         width: Get.width,
         height: Get.height,
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
         child: ListView(
@@ -90,6 +90,7 @@ class ResetPwd extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
                         child: liTextField(
+                            passwordType: true,
                             title: "كلمة المرور الجديدة",
                             inputType: TextInputType.number),
                       ),
@@ -97,7 +98,8 @@ class ResetPwd extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
                         child: liTextField(
                             title: "إعادة إدخال كلمة المرور الجديدة",
-                            inputType: TextInputType.number),
+                            inputType: TextInputType.number,
+                            passwordType: true),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),

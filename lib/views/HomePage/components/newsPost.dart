@@ -3,14 +3,18 @@ import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class NewsPost extends StatelessWidget {
-  const NewsPost(
+  NewsPost(
       {super.key,
       required this.newsPostText,
-      required this.img,
-      required this.onPressed});
+      this.img,
+      required this.onPressed,
+      required this.profilePic,
+      required this.accountName});
   final String newsPostText;
-  final Widget img;
+  Widget? img;
   final void Function() onPressed;
+  final String profilePic;
+  final String accountName;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,7 @@ class NewsPost extends StatelessWidget {
             color: appColors.onSecondary,
             borderRadius: BorderRadius.all(Radius.circular(15))),
         child: Column(
+          mainAxisSize: MainAxisSize.max,
           children: [
             Row(
               children: [
@@ -31,11 +36,11 @@ class NewsPost extends StatelessWidget {
                   child: Container(
                     child: CircleAvatar(
                       radius: 30,
-                      backgroundImage: AssetImage("images/newsLogo.png"),
+                      backgroundImage: AssetImage(profilePic),
                     ),
                   ),
                 ),
-                Text("أكاديمية طويق",
+                Text(accountName,
                     textAlign: TextAlign.start,
                     style: TextStyle(
                         fontSize: 20,
@@ -43,15 +48,15 @@ class NewsPost extends StatelessWidget {
                         color: Colors.white)),
               ],
             ),
-            Flexible(flex: 1,
+            Flexible(
+              flex: 1,
               child: Container(
-              padding: const EdgeInsets.fromLTRB(17, 0, 17, 10),
-
+                padding: const EdgeInsets.fromLTRB(17, 0, 17, 10),
                 child: Text(
                   newsPostText,
                   style: TextStyle(fontSize: 16, color: Colors.white),
                   softWrap: true,
-                  maxLines: 4,
+                  maxLines: 8,
                 ),
               ),
             ),

@@ -73,27 +73,27 @@ Widget bottomNavigationBar() {
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.account_circle_outlined)),
             icon: Icon(Icons.account_circle_outlined),
-            label: "account",
+            label: "حسابي",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.groups)),
             icon: Icon(Icons.groups),
-            label: "groups",
+            label: "المجتمعات",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.event)),
             icon: Icon(Icons.event),
-            label: "event",
+            label: "الفعاليات",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.leaderboard)),
             icon: Icon(Icons.leaderboard),
-            label: "leaderboard",
+            label: "لائحة المتصدرين",
           ),
           BottomNavigationBarItem(
             activeIcon: selectedIcon(icon: Icon(Icons.home)),
             icon: Icon(Icons.home),
-            label: "home",
+            label: "الصفحة الرئيسية",
           ),
         ]),
   );

@@ -14,7 +14,7 @@ List<GetPage<dynamic>> routerApp = [
   ),
   GetPage(
     name: RouterName.loginPage,
-    page: () => const LoginPage(),
+    page: () => LoginPage(),
   ),
   GetPage(
     name: RouterName.profilePage,
