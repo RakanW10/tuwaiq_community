@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tuwaiq_community/views/HomePage/StaticTweetPage2.dart';
 import 'package:tuwaiq_community/views/HomePage/components/CarouselSlider.dart';
 import 'package:tuwaiq_community/views/HomePage/components/newsPost.dart';
 import 'package:tuwaiq_community/views/HomePage/components/showPicture.dart';
+import 'package:tuwaiq_community/views/HomePage/StaticTweetPage1.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class HomePage extends StatelessWidget {
@@ -52,9 +54,13 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: NewsPost(
+                height: Get.height / 2,
+                width: Get.width - 30,
                 accountName: "أكاديمية طويق",
                 profilePic: "images/newsLogo.png",
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => StaticTweetPage1());
+                },
                 newsPostText:
                     "تعرّف على برامج #أكاديمية_طويق الأسبوع المقبل. للتسجيل في البرامج المتاحة: https://bootcamp.sa/bootcamps?only_open=true",
                 img: InkWell(
@@ -74,15 +80,17 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: NewsPost(
+                height: Get.height / 2.5,
+                width: Get.width - 30,
                 accountName: "م. فهد العازمي",
                 profilePic: "images/fahadPhoto.png",
                 onPressed: () {
-                  
+                  Get.to(() => StaticTweetPage2());
                 },
                 newsPostText:
                     "يسعدني ويشرفني الأعلان عن حفل تخريج اول دفع من مبرمجين تطوير تطبيقات الويب والجوال بستخدام ايطار العمل  Flutter، \nوادعوا جميع  المهتمين بهذا المجال حضور هذا الحفل، لرؤية مشاريع تخرج المبرمجين، والتعرف على هذا المجل اكثر وكثر. \nالوقت: 2023/01/01 - 13:00 \nالمكان: قاعة G-10",
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -9,25 +9,28 @@ class NewsPost extends StatelessWidget {
       this.img,
       required this.onPressed,
       required this.profilePic,
-      required this.accountName});
+      required this.accountName,
+      required this.height,
+      required this.width});
   final String newsPostText;
   Widget? img;
   final void Function() onPressed;
   final String profilePic;
   final String accountName;
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: Get.height / 2,
-        width: Get.width - 30,
+        height: height,
+        width: width,
         decoration: BoxDecoration(
             color: appColors.onSecondary,
             borderRadius: BorderRadius.all(Radius.circular(15))),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           children: [
             Row(
               children: [
@@ -48,16 +51,13 @@ class NewsPost extends StatelessWidget {
                         color: Colors.white)),
               ],
             ),
-            Flexible(
-              flex: 1,
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(17, 0, 17, 10),
-                child: Text(
-                  newsPostText,
-                  style: TextStyle(fontSize: 16, color: Colors.white),
-                  softWrap: true,
-                  maxLines: 8,
-                ),
+            Container(
+              padding: const EdgeInsets.fromLTRB(17, 0, 17, 10),
+              child: Text(
+                newsPostText,
+                style: TextStyle(fontSize: 16, color: Colors.white),
+                softWrap: true,
+                maxLines: 8,
               ),
             ),
             Padding(
