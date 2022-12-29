@@ -22,7 +22,7 @@ btmSheetFunc() {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              liTextField(title: "رمز التحقق", inputType: TextInputType.number),
+              liTextField(title: "رمز التحقق", inputType: TextInputType.number, passwordType: true),
               liButton(
                   btnName: "ارسال",
                   onPressed: (() {
