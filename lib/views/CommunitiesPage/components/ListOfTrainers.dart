@@ -16,7 +16,7 @@ class ListOfTrainersCaed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height / 3,
+      height: Get.height / 2.6,
       width: Get.width - 20,
       decoration: BoxDecoration(
         color: appColors.onSecondary,

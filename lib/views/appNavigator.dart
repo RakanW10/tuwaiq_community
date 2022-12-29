@@ -7,12 +7,15 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:tuwaiq_community/controllers/appNavigatorController.dart';
 import 'package:tuwaiq_community/controllers/leaderboardController.dart';
 import 'package:tuwaiq_community/controllers/likeBTN.dart';
+import 'package:tuwaiq_community/controllers/myDrawerController.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/CommunitiesPage.dart';
 import 'package:tuwaiq_community/views/EventsPage/eventsPage.dart';
 import 'package:tuwaiq_community/views/HomePage/HomePage.dart';
 import 'package:tuwaiq_community/views/LeaderboardPage/leaderboardPage.dart';
 import 'package:tuwaiq_community/views/ProfilePage/profilePage.dart';
 import 'package:tuwaiq_community/views/style.dart';
+
+import 'ProfilePage/profileDrawer.dart';
 
 Widget currentScreen = HomePage();
 
@@ -21,10 +24,6 @@ class AppNavigator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LeaderboardController _leaderboardController =
-        Get.put(LeaderboardController());
-    Get.put(LikeBTN());
-
     return GetBuilder<AppNavigatorController>(
       // why we still need this while we have binding?
       init: AppNavigatorController(),

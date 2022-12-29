@@ -27,7 +27,7 @@ class StatisticsBox extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: appColors.onSecondary,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color.fromARGB(255, 113, 111, 111),
             spreadRadius: 2,
@@ -43,7 +43,7 @@ class StatisticsBox extends StatelessWidget {
             child: Text(
               "الإحصائيات",
               style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: appColors.onMain),
             ),
@@ -52,7 +52,7 @@ class StatisticsBox extends StatelessWidget {
             padding: const EdgeInsets.only(left: 150, top: 10),
             child: Text(
               "ترتيبك في لائحة المتصدرين",
-              style: TextStyle(fontSize: 18, color: appColors.onMain),
+              style: TextStyle(fontSize: 16, color: appColors.onMain),
             ),
           ),
           SizedBox(
@@ -61,14 +61,18 @@ class StatisticsBox extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset("images/tuwaiqIconW 1.png"),
+              ImageIcon(
+                AssetImage("images/tuwaiqIconW 1.png"),
+                size: 40,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "طويق",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),
@@ -81,14 +85,18 @@ class StatisticsBox extends StatelessWidget {
                   )
                 ],
               ),
-              Image.asset("images/Vector-7.png"),
+              ImageIcon(
+                AssetImage("images/Vector-7.png"),
+                size: 30,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "المعسكر",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),
@@ -103,20 +111,24 @@ class StatisticsBox extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset("images/auto_awesome-24px 1.png"),
+              ImageIcon(
+                AssetImage("images/auto_awesome-24px 1.png"),
+                size: 30,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "الجوائز",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),
@@ -129,14 +141,18 @@ class StatisticsBox extends StatelessWidget {
                   )
                 ],
               ),
-              Image.asset("images/Vector-9.png"),
+              ImageIcon(
+                AssetImage("images/Vector-9.png"),
+                size: 30,
+                color: appColors.onMain,
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
                     "الزيارات",
                     style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         color: appColors.onMain,
                         fontWeight: FontWeight.w400),
                   ),

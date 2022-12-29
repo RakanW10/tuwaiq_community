@@ -23,7 +23,7 @@ class _TabBar1State extends State<TabBarCom>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
 
-  List<Tab>? nameTabs = [];
+ 
   @override
   void initState() {
     tabController = TabController(length: widget.numberTab, vsync: this);
@@ -39,7 +39,7 @@ class _TabBar1State extends State<TabBarCom>
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Column(
         children: [
           Container(
@@ -79,3 +79,102 @@ class _TabBar1State extends State<TabBarCom>
     );
   }
 }
+
+
+
+// class MyTabController extends GetxController with GetSingleTickerProviderStateMixin {
+//   List<Tab>? tabName = [];
+//   List<Widget>? TabbarViweWidget = [];
+  
+
+//   late TabController controller;
+
+//   @override
+//   void onInit() {
+//     super.onInit();
+//     controller = TabController(vsync: this, length:tabName!.length);
+//   }
+
+//   @override
+//   void onClose() {
+//     controller.dispose();
+//     super.onClose();
+//   }
+// }
+
+
+
+
+
+// class TabBar2 extends StatelessWidget {
+//  TabBar2({super.key});
+//   MyTabController _tabx = Get.put(MyTabController());
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetBuilder<MyTabController>(
+//       init: MyTabController(),
+//       builder: (con){
+// return 
+// Padding(
+//       padding: const EdgeInsets.symmetric(horizontal: 8),
+//       child: Column(
+//         children: [
+//           Container(
+//             margin: EdgeInsets.only(top: 20, bottom: 20),
+//             height: 30,
+//             decoration: BoxDecoration(
+//               color: appColors.onSecondary,
+//               borderRadius: BorderRadius.circular(20),
+//               boxShadow: [
+//                 BoxShadow(
+//                   color: Color.fromARGB(110, 66, 68, 72),
+//                   spreadRadius: 1,
+//                   blurRadius: 3,
+//                   offset: Offset(0, 4),
+//                 ),
+//               ],
+//             ),
+//             child: TabBar(
+//                 controller: con.controller,
+//                 indicator: BoxDecoration(
+//                   borderRadius: BorderRadius.circular(
+//                     20,
+//                   ),
+//                   color: appColors.onMain,
+//                 ),
+//                 labelColor: appColors.onSecondary,
+//                 unselectedLabelColor: appColors.onMain,
+//                 tabs:con.tabName!),
+//           ),
+//           Expanded(
+//               child: TabBarView(
+//             controller: con.controller,
+//             children: con.TabbarViweWidget!,
+//           ))
+//         ],
+//       ),
+//     );
+
+
+
+//       });
+//   }
+// }
+
+// class w1 extends StatelessWidget {
+//    w1({super.key});
+//   MyTabController tabx = Get.find();
+     
+  
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: TabBar2(
+
+
+//       ),
+//     );
+//   }
+// }

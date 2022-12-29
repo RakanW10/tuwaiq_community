@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/router/bindingClasses.dart';
 import 'package:tuwaiq_community/views/LoginPage/LoginPage.dart';
+import 'package:tuwaiq_community/views/ProfilePage/profileDrawer.dart';
 import 'package:tuwaiq_community/views/ProfilePage/profilePage.dart';
 import 'package:tuwaiq_community/views/appNavigator.dart';
 
@@ -24,10 +25,15 @@ List<GetPage<dynamic>> routerApp = [
     name: RouterName.communitiesPage,
     page: () => CommunitiesPage(),
   ),
+  GetPage(
+    name: RouterName.appDrawer,
+    page: () => profileDrawer(),
+  )
 ];
 
 abstract class RouterName {
-  static const String appNavigator = "/";
+  static const String appDrawer = "/";
+  static const String appNavigator = "/appNavigator";
   static const String loginPage = "/LoginPage";
   static const String profilePage = "/ProfilePage";
   static const String communitiesPage = "/communitiesPage";

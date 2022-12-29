@@ -1,20 +1,26 @@
+import 'dart:ui';
+
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
+import 'package:tuwaiq_community/controllers/stateCh.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/BoxDescription.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/ListOfTrainers.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/MyTask.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/MychallengesCard.dart';
+import 'package:tuwaiq_community/views/CommunitiesPage/components/ShowDiloge.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/AppBar.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/TabBarTest.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class MyCommunitiesPage extends StatelessWidget {
-  const MyCommunitiesPage({super.key});
+  MyCommunitiesPage({super.key});
+  StateChall timer = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -30,25 +36,34 @@ class MyCommunitiesPage extends StatelessWidget {
           alignment: Alignment.center,
           height: Get.height,
           width: Get.width,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             gradient: appColors.backgroundColor,
           ),
           child: Column(
             children: [
 //-------------------------------Name MyCommunities and Icon---------------------------------------
               Spacing(height: 20),
-              Image(
-                image: AssetImage(Get.arguments["image"]),
+              Column(
+                children: [
+                  Image(
+                    image: AssetImage(Get.arguments["image"]),
+                  ),
+                  Container(
+                    constraints: const BoxConstraints(
+                      maxWidth: 250,
+                    ),
+                    child: Text(
+                      Get.arguments["nameCommunity"],
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: appColors.onMain,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                constraints: const BoxConstraints(
-                  maxWidth: 230,
-                ),
-                child: Text(
-                  Get.arguments["nameCommunity"],
-                  style: TextStyle(color: appColors.onMain, fontSize: 18),
-                ),
-              ),
+
               Spacing(height: 20),
 
 //-----------------------------------TabBar Nanes----------------------------------------
@@ -57,8 +72,7 @@ class MyCommunitiesPage extends StatelessWidget {
                 child: TabBarCom(
                   tabName: [
                     Tab(
-                        text:
-                      "الرئيسية",
+                      text: "الرئيسية",
                     ),
                     Tab(text: "المشاركين"),
                     Tab(text: "التحديات"),
@@ -71,10 +85,9 @@ class MyCommunitiesPage extends StatelessWidget {
                     ListView(
                       children: [
                         BoxtDescription(
-                          description:
-                              "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة.",
-                          timeClass: "15:00-10:00",
-                          classNumber: "G-07",
+                          description: Get.arguments["description"],
+                          timeClass: Get.arguments["time"],
+                          classNumber: Get.arguments["class"],
                         ),
                         Spacing(height: 20),
                         ListOfTrainersCaed()
@@ -83,33 +96,71 @@ class MyCommunitiesPage extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                     Center(child: Text("2"),),
+                    Center(
+                      child: Text("2"),
+                    ),
 
                     //----------------------------------Widget 3-------------------------------
 
-                    GridView.builder(
-                      itemCount: Mychallenges?.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 1,
-                        childAspectRatio: 3,
-                      ),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Expanded(
-                          flex: 1,
-                          child: Column(
-                            children: [
-                              MychallengesTestCard(
-                                image: Mychallenges![index]["image"],
-                                nameChallenges: Mychallenges![index]
-                                    ["challenges"],
-                                points: Mychallenges![index]['points'],
-                                coin: Mychallenges![index]['coin'],
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
+                    GetBuilder<StateChall>(
+                        init: StateChall(),
+                        builder: ((con) {
+                          return GridView.builder(
+                            itemCount: Mychallenges?.length,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                              childAspectRatio: 3,
+                            ),
+                            itemBuilder: (BuildContext context, int index) {
+                              return Expanded(
+                                flex: 1,
+                                child: Column(
+                                  children: [
+                                    MychallengesTestCard(
+                                      onTapCard: () {
+                                        sh(
+                                            onTapA: () {
+                                              con.changeStateDone();
+                                              con.update();
+                                              Get.back();
+                                            },
+                                            onTapB: (() {
+                                              con.changeStateExit();
+                                              con.update();
+                                               Get.back();
+                                            }),
+                                            context: context,
+                                            adrees: Mychallenges![index]
+                                                ["challenges"],
+                                            prize: Mychallenges![index]
+                                                ['points'],
+                                            state: Mychallenges![index]
+                                                        ["image"] ==
+                                                    Mychallenges![0]["image"]
+                                                ? con.state
+                                                : Image.asset(
+                                                    Mychallenges![index]
+                                                        ["image"]),
+                                            description: Mychallenges![index]
+                                                ["description"]);
+                                      },
+                                      state: Mychallenges![index]["image"] ==
+                                              Mychallenges![0]["image"]
+                                          ? con.state
+                                          : Image.asset(
+                                              Mychallenges![index]["image"]),
+                                      nameChallenges: Mychallenges![index]
+                                          ["challenges"],
+                                      points: Mychallenges![index]['points'],
+                                      coin: Mychallenges![index]['coin'],
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        })),
 
                     //-------------------------------Widget 4-------------------------------
                     GridView.builder(
@@ -125,9 +176,21 @@ class MyCommunitiesPage extends StatelessWidget {
                             children: [
                               MyTaskCard(
                                 image: MyTasks![index]["image"],
-                                nameTask
-                                : MyTasks![index]["challenges"],
+                                nameTask: MyTasks![index]["challenges"],
                                 points: MyTasks![index]['points'],
+                                 
+
+                                 onTapCard: () => ShMyTasks(context: context ,
+                                 adrees: MyTasks![index]["challenges"],
+                                 prize: MyTasks![index]["points"],
+                                 image: MyTasks![index]["image"],
+                                 description: MyTasks![index]["description"],
+                                 onTapA: () {
+                                 Get.back();
+                                 },
+                                 onTapB:() => Get.back()
+                              
+                                 ),
                               ),
                             ],
                           ),
@@ -142,3 +205,5 @@ class MyCommunitiesPage extends StatelessWidget {
     );
   }
 }
+
+

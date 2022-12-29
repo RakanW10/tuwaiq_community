@@ -45,7 +45,7 @@ class TuCommunity extends StatelessWidget {
                   maxWidth: 230,
                 ),
                 child: Text(
-                  Get.arguments["nameCommunity"],
+                  Get.arguments["nameCommunity"],textAlign: TextAlign.center,
                   style: TextStyle(color: appColors.onMain, fontSize: 18),
                 ),
               ),
@@ -70,10 +70,10 @@ class TuCommunity extends StatelessWidget {
                     ListView(
                       children: [
                         BoxtDescription(
-                          description:
-                              "معسكر تدريبي مكثف لتطوير تطبيقات الجوال والويب باستخدام إطار عمل Flutter، والذي يعتبر الإطار الأحدث والأسهل لبناء تطبيقات تعمل على عدة أنظمة.",
-                          timeClass: "15:00-10:00",
-                          classNumber: "G-07",
+                          description:Get.arguments["description"],
+                            
+                          timeClass: Get.arguments["time"],
+                          classNumber: Get.arguments["class"],
                         ),
                         Spacing(height: 20),
                         ListOfTrainersCaed()

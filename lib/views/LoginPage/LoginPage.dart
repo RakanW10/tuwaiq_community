@@ -68,7 +68,7 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
                         child: liTextField(
-                         passwordType: false,
+                          passwordType: false,
                           title: "اسم المستخدم",
                           controller: emailcontrol,
                         ),
@@ -76,10 +76,9 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 30, 0, 10),
                         child: liTextField(
-                          title: "كلمة المرور",
-                          controller: passcontrol,
-                         passwordType: true
-                        ),
+                            title: "كلمة المرور",
+                            controller: passcontrol,
+                            passwordType: true),
                       ),
                       Align(
                         alignment: Alignment.centerLeft,
@@ -108,7 +107,8 @@ class LoginPage extends StatelessWidget {
                                         appColors.onMain.withOpacity(0.5),
                                     'خطأ في التسجيل',
                                     'يجب ان يكون لديك حساب لتسجيل الدخول',
-                                    snackPosition: SnackPosition.BOTTOM);
+                                    snackPosition: SnackPosition.BOTTOM,
+                                  );
                           },
                           btnName: "تسجيل الدخول  ",
                           btnIcon: Icons.login,
