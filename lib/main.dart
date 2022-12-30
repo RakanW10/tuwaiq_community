@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:tuwaiq_community/Model/CommunityData.dart';
 import 'package:tuwaiq_community/controllers/likeBTN.dart';
 
 import 'package:tuwaiq_community/controllers/stateCh.dart';
@@ -30,7 +30,6 @@ void main() async {
       DeviceOrientation.portraitDown,
     ],
   );
-
   runApp(const MyApp());
 }
 
@@ -42,7 +41,6 @@ class MyApp extends StatelessWidget {
     Get.put(LikeBTN());
     Get.put<MyDrawerController>(MyDrawerController());
 
-    //uploadUsersDummyData();
     appColors.changeTheme();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,

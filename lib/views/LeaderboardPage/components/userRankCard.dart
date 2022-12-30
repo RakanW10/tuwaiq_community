@@ -3,13 +3,14 @@ import 'package:tuwaiq_community/views/globalComponents/TextStyle.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class UserRankCard extends StatelessWidget {
-  const UserRankCard(
-      {super.key,
-      required this.rank,
-      required this.name,
-      required this.profileImagePath,
-      required this.point,
-      required this.bannerPath});
+  const UserRankCard({
+    super.key,
+    required this.rank,
+    required this.name,
+    required this.profileImagePath,
+    required this.point,
+    required this.bannerPath,
+  });
   final int rank;
   final String name;
   final String profileImagePath;
@@ -23,9 +24,10 @@ class UserRankCard extends StatelessWidget {
         height: 51,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(bannerPath != ""
-                  ? bannerPath
-                  : "images/LeaderboardBannerEmpty.png")),
+            image: AssetImage(bannerPath != ""
+                ? bannerPath
+                : "images/LeaderboardBannerEmpty.png"),
+          ),
           borderRadius: const BorderRadius.all(
             Radius.circular(8),
           ),
@@ -56,7 +58,7 @@ class UserRankCard extends StatelessWidget {
                 ],
               ),
             const SizedBox(
-              width: 17,
+              width: 20,
             ),
             Image.asset(profileImagePath),
             const SizedBox(
