@@ -1,6 +1,7 @@
 //Sign in method
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/views/LoginPage/LoginPage.dart';
 import 'package:tuwaiq_community/views/ProfilePage/profileDrawer.dart';
 import 'package:tuwaiq_community/views/appNavigator.dart';
@@ -8,10 +9,10 @@ import 'package:tuwaiq_community/views/style.dart';
 
 SignInMethod({required String emailAddress, required String password}) async {
   try {
-    final credential = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(email: emailAddress, password: password);
+    // final credential = await FirebaseAuth.instance
+    //     .signInWithEmailAndPassword(email: emailAddress, password: password);
 
-    Get.offAll(() => profileDrawer());
+    Get.offAllNamed(RouterName.appDrawer);
   } on FirebaseAuthException catch (e) {
     if (e.code == 'user-not-found') {
       Get.snackbar(
@@ -40,7 +41,7 @@ SignUpMethod({
       email: emailAddress,
       password: password,
     );
-    Get.offAll(() => AppNavigator());
+    Get.offAllNamed(RouterName.appNavigator);
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
       print('The password provided is too weak.');

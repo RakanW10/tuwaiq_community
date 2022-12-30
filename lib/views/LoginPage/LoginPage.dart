@@ -86,7 +86,7 @@ class LoginPage extends StatelessWidget {
                           onTap: () {
                             Get.to(() => Forgetpwd());
                           },
-                          child: Text(
+                          child: const Text(
                             "نسيت كلمة المرور؟",
                             style: TextStyle(
                                 color: Color(0xff999D9E),

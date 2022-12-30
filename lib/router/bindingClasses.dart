@@ -1,24 +1,33 @@
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/controllers/appNavigatorController.dart';
 import 'package:tuwaiq_community/controllers/leaderboardController.dart';
+import 'package:tuwaiq_community/controllers/qrCodePageContoller.dart';
 
-class AppNavigatorBinding extends Bindings {
+class AppNavigatorBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(() => AppNavigatorController());
   }
 }
 
-class LoginPageBinding extends Bindings {
+class LoginPageBinding implements Bindings {
   @override
   void dependencies() {
     // add here, then don't forget the router
   }
 }
 
-class LeaderBoardBinding extends Bindings {
+class LeaderBoardBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(LeaderboardController());
+  }
+}
+
+class profileDrawerBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.put<QRCodePageController>(QRCodePageController());
+    print("here");
   }
 }
