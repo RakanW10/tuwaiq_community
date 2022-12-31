@@ -1,23 +1,50 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/services/firebaseAuth.dart';
-import 'package:tuwaiq_community/views/Forgotpwd/forgotpwd.dart';
-import 'package:tuwaiq_community/views/HomePage/homePage.dart';
+import 'package:tuwaiq_community/views/LoginPage/LoginPage.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/liButton.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/litextfield.dart';
-import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
-import 'package:tuwaiq_community/views/Store/StorePage.dart';
-import 'package:tuwaiq_community/views/appNavigator.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
-  TextEditingController emailcontrol = TextEditingController();
-  TextEditingController passcontrol = TextEditingController();
+class ChangeEmail extends StatelessWidget {
+  ChangeEmail({super.key});
+  TextEditingController chngEmail = TextEditingController();
+  Future resetEmail(String newEmail) async {
+    var message;
+    final user = await FirebaseAuth.instance.currentUser!;
+    user
+        .updateEmail(newEmail)
+        .then(
+          (value) => message = 'Success',
+        )
+        .catchError((onError) => message = 'error');
+    return message;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        toolbarHeight: 30,
+        actions: [
+          IconButton(
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            icon: Icon(
+              Icons.arrow_back_ios_new_sharp,
+              color: appColors.onSecondary,
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+        ],
+      ),
       body: Container(
         width: Get.width,
         height: Get.height,
@@ -26,7 +53,6 @@ class LoginPage extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            Spacing(height: 30),
             Container(
                 height: Get.width / 2.6,
                 width: Get.width / 2.6,
@@ -49,7 +75,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "تسجيل الدخول",
+                      "تغيير البريد الالكتروني",
                       style:
                           TextStyle(color: appColors.onSecondary, fontSize: 20),
                     )
@@ -60,9 +86,9 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Container(
-                height: 353,
+                height: 320,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: appColors.onMain,
                     borderRadius: BorderRadius.all(Radius.circular(20))),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -71,51 +97,27 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
                         child: liTextField(
-                          passwordType: false,
-                          title: "اسم المستخدم",
-                          controller: emailcontrol,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 30, 0, 10),
-                        child: liTextField(
-                            title: "كلمة المرور",
-                            controller: passcontrol,
-                            passwordType: true),
-                      ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: InkWell(
-                          onTap: () {
-                            Get.to(() => Forgetpwd());
-                          },
-                          child: const Text(
-                            "نسيت كلمة المرور؟",
-                            style: TextStyle(
-                                color: Color(0xff999D9E),
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
+                            controller: chngEmail,
+                            passwordType: false,
+                            title: "البريد الالكتروني الجديد",
+                            inputType: TextInputType.emailAddress),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
                           onPressed: () {
-                           
-                            emailcontrol.text.isNotEmpty
-                                ? SignInMethod(
-                                    emailAddress: emailcontrol.text,
-                                    password: passcontrol.text)
-                                : Get.snackbar(
-                                    backgroundColor:
-                                        appColors.onMain.withOpacity(0.5),
-                                    'خطأ في التسجيل',
-                                    'يجب ان يكون لديك حساب لتسجيل الدخول',
-                                    snackPosition: SnackPosition.BOTTOM,
-                                  );
+                            try {
+                              if (chngEmail != null) {
+                                resetEmail(chngEmail.text);
+                                SignOutMethod();
+                                Get.snackbar("البريد الالكتروني",
+                                    "تم تغيير البريد الالكتروني بنجاح");
+                              }
+                            } catch (t) {
+                              print(t);
+                            }
                           },
-                          btnName: "تسجيل الدخول  ",
-                          btnIcon: Icons.login,
+                          btnName: "   تغيير البريد الالكتروني",
                         ),
                       ),
                     ],

@@ -16,6 +16,7 @@ class UserRankCard extends StatelessWidget {
   final String profileImagePath;
   final int point;
   final String bannerPath;
+  
 
   @override
   Widget build(BuildContext context) {

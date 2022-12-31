@@ -50,6 +50,8 @@ dependencies:
   like_button: ^2.0.5
   flutter_zoom_drawer: ^3.0.3
   flutter_launcher_icons: ^0.11.0
+  image_picker: ^0.8.6
+
 
 dev_dependencies:
   flutter_test:
