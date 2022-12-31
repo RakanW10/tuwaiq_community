@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/views/ProfilePage/components/menuOption.dart';
 import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
+import 'package:tuwaiq_community/views/personalProfile/personalProfile.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -17,7 +18,10 @@ class Menu extends StatelessWidget {
         width: Get.width,
         child: Column(
           children: [
-            const MenuOption(
+            MenuOption(
+              onTapFun: () {
+                Get.to(()=>PersonalProfile());
+              },
               icon: Icons.folder_shared_rounded,
               option: "الملف الشخصي",
             ),
@@ -34,7 +38,8 @@ class Menu extends StatelessWidget {
             const SizedBox(
               height: 2,
             ),
-            const MenuOption(
+            MenuOption(
+              onTapFun: () {},
               icon: Icons.store_rounded,
               option: "المتجر",
             ),

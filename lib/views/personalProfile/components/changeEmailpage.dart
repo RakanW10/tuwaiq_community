@@ -1,16 +1,26 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tuwaiq_community/services/firebaseAuth.dart';
+import 'package:tuwaiq_community/views/LoginPage/LoginPage.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/liButton.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/litextfield.dart';
-import 'package:tuwaiq_community/views/appNavigator.dart';
 import 'package:tuwaiq_community/views/style.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
 
-// svg picture has some errors, we need to fix the logo SVG pic
-//font edits still in progress
-
-class ResetPwd extends StatelessWidget {
-  const ResetPwd({super.key});
+class ChangeEmail extends StatelessWidget {
+  ChangeEmail({super.key});
+  TextEditingController chngEmail = TextEditingController();
+  Future resetEmail(String newEmail) async {
+    var message;
+    final user = await FirebaseAuth.instance.currentUser!;
+    user
+        .updateEmail(newEmail)
+        .then(
+          (value) => message = 'Success',
+        )
+        .catchError((onError) => message = 'error');
+    return message;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +57,6 @@ class ResetPwd extends StatelessWidget {
                 height: Get.width / 2.6,
                 width: Get.width / 2.6,
                 child: Image.asset("images/appLogo.png")),
-            //SvgPicture.asset("images/tlogo.svg")
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 22),
               child: Padding(
@@ -66,7 +75,7 @@ class ResetPwd extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "كلمة المرور الجديدة",
+                      "تغيير البريد الالكتروني",
                       style:
                           TextStyle(color: appColors.onSecondary, fontSize: 20),
                     )
@@ -88,25 +97,28 @@ class ResetPwd extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
                         child: liTextField(
-                            passwordType: true,
-                            title: "كلمة المرور الجديدة",
-                            inputType: TextInputType.number),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 25, 0, 10),
-                        child: liTextField(
-                            title: "إعادة إدخال كلمة المرور الجديدة",
-                            inputType: TextInputType.number,
-                            passwordType: true),
+                            controller: chngEmail,
+                            passwordType: false,
+                            title: "البريد الالكتروني الجديد",
+                            inputType: TextInputType.emailAddress),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
-                            onPressed: () {
-                              Get.offAll(() => AppNavigator());
-                            },
-                            btnName: "تغيير كلمة المرور",
-                            btnIcon: Icons.message),
+                          onPressed: () {
+                            try {
+                              if (chngEmail != null) {
+                                resetEmail(chngEmail.text);
+                                SignOutMethod();
+                                Get.snackbar("البريد الالكتروني",
+                                    "تم تغيير البريد الالكتروني بنجاح");
+                              }
+                            } catch (t) {
+                              print(t);
+                            }
+                          },
+                          btnName: "   تغيير البريد الالكتروني",
+                        ),
                       ),
                     ],
                   ),

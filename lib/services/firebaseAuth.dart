@@ -3,14 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/views/LoginPage/LoginPage.dart';
-import 'package:tuwaiq_community/views/ProfilePage/profileDrawer.dart';
-import 'package:tuwaiq_community/views/appNavigator.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 SignInMethod({required String emailAddress, required String password}) async {
   try {
-    // final credential = await FirebaseAuth.instance
-    //     .signInWithEmailAndPassword(email: emailAddress, password: password);
+    final credential = await FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: emailAddress, password: password);
 
     Get.offAllNamed(RouterName.appDrawer);
   } on FirebaseAuthException catch (e) {
@@ -75,3 +73,4 @@ Future ResetPassMethod({required String emailAddress}) async {
         snackPosition: SnackPosition.BOTTOM);
   }
 }
+
