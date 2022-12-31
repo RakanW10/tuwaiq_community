@@ -1,0 +1,28 @@
+List storeCoupon = [
+  {"imageCoupon": "images/image 18.png", "price": "5", "coin": "500"},
+  {"imageCoupon": "images/image 19.png", "price": "5", "coin": "500"},
+  {"imageCoupon": "images/image 20.png", "price": "10", "coin": "700"}
+];
+
+List storeC = [
+  {
+    "imageCoupon": "images/Banner 2.png",
+    "price": "52",
+  },
+  {
+    "imageCoupon": "images/Banner 2-2.png",
+    "price": "25",
+  },
+  {
+    "imageCoupon": "images/Banner 2-3.png",
+    "price": "60",
+  },
+  {
+    "imageCoupon": "images/Banner 1.png",
+    "price": "60",
+  },
+  {
+    "imageCoupon": "images/Banner 2.png",
+    "price": "60",
+  },
+];

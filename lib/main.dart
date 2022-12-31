@@ -11,13 +11,14 @@ import 'package:tuwaiq_community/Model/trainee.dart';
 
 import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/testAndDebuge/usersDummyData.dart';
+import 'package:tuwaiq_community/views/Store/StorePage.dart';
 import 'package:tuwaiq_community/views/style.dart';
 import 'controllers/leaderboardController.dart';
 import 'controllers/myDrawerController.dart';
 import 'firebase_options.dart';
 
 void main() async {
-  StateChall timer = Get.put(StateChall(), permanent: true);
+ 
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
     Get.put(LeaderboardController());
     Get.put(LikeBTN());
     Get.put<MyDrawerController>(MyDrawerController());
+    Get.put(StateChall() ,permanent: true );
 
     //uploadUsersDummyData();
     appColors.changeTheme();
@@ -52,6 +54,7 @@ class MyApp extends StatelessWidget {
       initialRoute: RouterName.loginPage,
       getPages: routerApp,
       locale: const Locale("ar", "SA"),
+     // home: Store(),
     );
   }
 }

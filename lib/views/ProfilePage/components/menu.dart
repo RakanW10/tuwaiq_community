@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/ProfilePage/components/menuOption.dart';
+import 'package:tuwaiq_community/views/Store/StorePage.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -14,7 +15,7 @@ class Menu extends StatelessWidget {
         // color: Colors.amber,
         width: Get.width,
         child: Column(
-          children: const [
+          children: [
             MenuOption(
               icon: Icons.folder_shared_rounded,
               option: "الملف الشخصي",
@@ -29,9 +30,17 @@ class Menu extends StatelessWidget {
             SizedBox(
               height: 2,
             ),
-            MenuOption(
-              icon: Icons.store_rounded,
-              option: "المتجر",
+            InkWell(
+              onTap: (() {
+                Store();
+              }),
+              child: MenuOption(
+                onTap: () {
+                  Get.to(Store());
+                },
+                icon: Icons.store_rounded,
+                option: "المتجر",
+              ),
             ),
           ],
         ));

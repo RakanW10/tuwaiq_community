@@ -7,8 +7,7 @@ import '../views/CommunitiesPage/components/TimerChall.dart';
 
 class StateChall extends GetxController {
   dynamic state;
-  
-   
+  late bool autoStart ;
   
 
   changeStateDone() {
@@ -21,7 +20,8 @@ class StateChall extends GetxController {
 
   @override
   void onInit() {
-   state = TimerChall();
+    state = TimerChall( autoStart: true,);
+    autoStart = true;
     // TODO: implement onInit
     super.onInit();
     update();

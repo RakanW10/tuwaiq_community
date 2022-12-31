@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/services/firebaseAuth.dart';
 import 'package:tuwaiq_community/views/Forgotpwd/forgotpwd.dart';
+import 'package:tuwaiq_community/views/HomePage/homePage.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/liButton.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/litextfield.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
+import 'package:tuwaiq_community/views/Store/StorePage.dart';
+import 'package:tuwaiq_community/views/appNavigator.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class LoginPage extends StatelessWidget {
@@ -98,6 +101,7 @@ class LoginPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
                           onPressed: () {
+                           
                             emailcontrol.text.isNotEmpty
                                 ? SignInMethod(
                                     emailAddress: emailcontrol.text,

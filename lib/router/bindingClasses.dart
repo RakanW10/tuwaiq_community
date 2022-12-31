@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/controllers/appNavigatorController.dart';
 import 'package:tuwaiq_community/controllers/leaderboardController.dart';
+import 'package:tuwaiq_community/controllers/stateCh.dart';
 
 class AppNavigatorBinding extends Bindings {
   @override
@@ -22,3 +23,11 @@ class LeaderBoardBinding extends Bindings {
     Get.put(LeaderboardController());
   }
 }
+
+class StateChallBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(StateChall());
+  }
+}
+

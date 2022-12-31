@@ -78,7 +78,6 @@ sh(
                                   fontSize: 16, color: appColors.onMain),
                             ),
                           ),
-                         
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
                             child: Text(
@@ -122,7 +121,8 @@ sh(
                                     child: Text(
                                   "خلصت",
                                   style: TextStyle(
-                                      fontSize: 25, fontWeight: FontWeight.bold),
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
                                 )),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
@@ -174,7 +174,9 @@ ShMyTasks(
     String? adrees,
     String? prize,
     String? image,
-    String? description , Function()? onTapA , Function()? onTapB}) {
+    String? description,
+    Function()? onTapA,
+    Function()? onTapB}) {
   showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -200,11 +202,7 @@ ShMyTasks(
                         child: Container(
                           height: 130,
                           width: 130,
-                          decoration: BoxDecoration(
-                              image: new DecorationImage(
-                            image: new AssetImage(image!),
-                            fit: BoxFit.fill,
-                          )),
+                          child: Image.asset(image!),
                         ),
                       ),
                       Column(
@@ -243,7 +241,7 @@ ShMyTasks(
                                   fontSize: 16, color: appColors.onMain),
                             ),
                           ),
-                           Spacing(height: 30),
+                          Spacing(height: 30),
                           Text(
                             "الوصف",
                             style: TextStyle(
@@ -281,7 +279,8 @@ ShMyTasks(
                                     child: Text(
                                   "خلصت",
                                   style: TextStyle(
-                                      fontSize: 25, fontWeight: FontWeight.bold),
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
                                 )),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
@@ -294,7 +293,7 @@ ShMyTasks(
                           ),
                           Expanded(
                             child: InkWell(
-                              onTap:onTapB ,
+                              onTap: onTapB,
                               child: Container(
                                 height: Get.width / 5,
                                 width: Get.width / 2.1,

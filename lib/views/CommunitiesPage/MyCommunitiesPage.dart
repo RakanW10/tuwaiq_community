@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
+import 'package:tuwaiq_community/controllers/leaderboardController.dart';
 import 'package:tuwaiq_community/controllers/stateCh.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/BoxDescription.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/ListOfTrainers.dart';
@@ -15,12 +16,14 @@ import 'package:tuwaiq_community/views/CommunitiesPage/components/MychallengesCa
 import 'package:tuwaiq_community/views/CommunitiesPage/components/ShowDiloge.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/AppBar.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/TabBarTest.dart';
+import 'package:tuwaiq_community/views/LeaderboardPage/components/userRankCard.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class MyCommunitiesPage extends StatelessWidget {
   MyCommunitiesPage({super.key});
   StateChall timer = Get.find();
+  LeaderboardController _Controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -96,9 +99,20 @@ class MyCommunitiesPage extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                    Center(
-                      child: Text("2"),
+                       Container(
+                  height: 580,
+                  child: ListView.builder(
+                    itemCount: _Controller.trainees.length,
+                    itemBuilder: (context, index) => UserRankCard(
+                      rank: index + 1,
+                      name: _Controller.trainees[index].name,
+                      profileImagePath: "images/person1.png",
+                      point: _Controller.trainees[index].levelPoint,
+                      bannerPath: _Controller
+                          .trainees[index].leaderboardBanner,
                     ),
+                  ),
+                ),
 
                     //----------------------------------Widget 3-------------------------------
 
