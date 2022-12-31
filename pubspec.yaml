@@ -49,6 +49,7 @@ dependencies:
   cloud_firestore: ^4.3.0
   like_button: ^2.0.5
   flutter_zoom_drawer: ^3.0.3
+  image_picker: ^0.8.6
 
 dev_dependencies:
   flutter_test:
@@ -94,6 +95,10 @@ flutter:
           weight: 400
         - asset: fonts/DINNextLTArabic-Bold.ttf
           weight: 700
+    - family: Reqa
+      fonts:
+        - asset: fonts/ArefRuqaa-Bold-1.ttf
+          weight: 400
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
