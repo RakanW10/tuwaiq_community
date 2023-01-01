@@ -6,9 +6,11 @@ import '../views/CommunitiesPage/components/MychallengesCard.dart';
 import '../views/CommunitiesPage/components/TimerChall.dart';
 
 class StateChall extends GetxController {
-  dynamic state;
-  late bool autoStart ;
-  
+  dynamic state = TimerChall(
+    autoStart: true,
+  );
+
+  late bool autoStart;
 
   changeStateDone() {
     state = Image.asset("images/Timer-3.png");
@@ -18,14 +20,12 @@ class StateChall extends GetxController {
     state = Image.asset("images/wrong-icon 1.png");
   }
 
-  @override
-  void onInit() {
-    state = TimerChall( autoStart: true,);
-    autoStart = true;
-    // TODO: implement onInit
-    super.onInit();
-    update();
-  }
+  // @override
+  // void onInit() {
+  //   // TODO: implement onInit
+  //   super.onInit();
+  //   update();
+  // }
 
   @override
   void onClose() {

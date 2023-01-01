@@ -59,7 +59,9 @@ class MyCommunitiesPage extends StatelessWidget {
                       Get.arguments["nameCommunity"],
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: appColors.onMain,
+                        color: appColors.themeName == "SAFCSP"
+                            ? Color(0xFF424448)
+                            : appColors.onMain,
                         fontSize: 18,
                       ),
                     ),
@@ -99,20 +101,21 @@ class MyCommunitiesPage extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                       Container(
-                  height: 580,
-                  child: ListView.builder(
-                    itemCount: _Controller.trainees.length,
-                    itemBuilder: (context, index) => UserRankCard(
-                      rank: index + 1,
-                      name: _Controller.trainees[index].name,
-                      profileImagePath: "images/person1.png",
-                      point: _Controller.trainees[index].levelPoint,
-                      bannerPath: _Controller
-                          .trainees[index].leaderboardBanner,
+                    Container(
+                      height: 580,
+                      child: ListView.builder(
+                        itemCount: _Controller.trainees.length,
+                        itemBuilder: (context, index) => UserRankCard(
+                          rank: index + 1,
+                          name: _Controller.trainees[index].name,
+                          profileImagePath:
+                              _Controller.trainees[index].profileImagePath,
+                          point: _Controller.trainees[index].levelPoint,
+                          bannerPath:
+                              _Controller.trainees[index].leaderboardBanner,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
 
                     //----------------------------------Widget 3-------------------------------
 
@@ -142,7 +145,7 @@ class MyCommunitiesPage extends StatelessWidget {
                                             onTapB: (() {
                                               con.changeStateExit();
                                               con.update();
-                                               Get.back();
+                                              Get.back();
                                             }),
                                             context: context,
                                             adrees: Mychallenges![index]
@@ -157,7 +160,7 @@ class MyCommunitiesPage extends StatelessWidget {
                                                     Mychallenges![index]
                                                         ["image"]),
                                             description: Mychallenges![index]
-                                                ["description"]);
+                                                ["description"],);
                                       },
                                       state: Mychallenges![index]["image"] ==
                                               Mychallenges![0]["image"]
@@ -192,19 +195,16 @@ class MyCommunitiesPage extends StatelessWidget {
                                 image: MyTasks![index]["image"],
                                 nameTask: MyTasks![index]["challenges"],
                                 points: MyTasks![index]['points'],
-                                 
-
-                                 onTapCard: () => ShMyTasks(context: context ,
-                                 adrees: MyTasks![index]["challenges"],
-                                 prize: MyTasks![index]["points"],
-                                 image: MyTasks![index]["image"],
-                                 description: MyTasks![index]["description"],
-                                 onTapA: () {
-                                 Get.back();
-                                 },
-                                 onTapB:() => Get.back()
-                              
-                                 ),
+                                onTapCard: () => ShMyTasks(
+                                    context: context,
+                                    adrees: MyTasks![index]["challenges"],
+                                    prize: MyTasks![index]["points"],
+                                    image: MyTasks![index]["image"],
+                                    description: MyTasks![index]["description"],
+                                    onTapA: () {
+                                      Get.back();
+                                    },
+                                    onTapB: () => Get.back()),
                               ),
                             ],
                           ),
@@ -219,5 +219,3 @@ class MyCommunitiesPage extends StatelessWidget {
     );
   }
 }
-
-

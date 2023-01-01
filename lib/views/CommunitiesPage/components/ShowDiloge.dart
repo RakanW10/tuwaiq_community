@@ -6,14 +6,15 @@ import 'package:tuwaiq_community/Model/CommunityData.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-sh(
-    {required BuildContext context,
-    String? adrees,
-    String? prize,
-    Widget? state,
-    String? description,
-    Function()? onTapA,
-    Function()? onTapB}) {
+sh({
+  required BuildContext context,
+  String? adrees,
+  String? prize,
+  Widget? state,
+  String? description,
+  Function()? onTapA,
+  Function()? onTapB,
+}) {
   showDialog(
       context: context,
       builder: (BuildContext context) {

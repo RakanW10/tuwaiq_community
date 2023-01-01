@@ -4,17 +4,20 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
+import 'package:tuwaiq_community/controllers/leaderboardController.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/BoxDescription.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/ListOfTrainers.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/MyTask.dart';
 import 'package:tuwaiq_community/views/CommunitiesPage/components/MychallengesCard.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/AppBar.dart';
 import 'package:tuwaiq_community/views/GlobalComponents/TabBarTest.dart';
+import 'package:tuwaiq_community/views/LeaderboardPage/components/userRankCard.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
 class TuCommunity extends StatelessWidget {
-  const TuCommunity({super.key});
+  TuCommunity({super.key});
+  LeaderboardController _Controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class TuCommunity extends StatelessWidget {
           alignment: Alignment.center,
           height: Get.height,
           width: Get.width,
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
             gradient: appColors.backgroundColor,
           ),
           child: Column(
@@ -45,8 +48,13 @@ class TuCommunity extends StatelessWidget {
                   maxWidth: 230,
                 ),
                 child: Text(
-                  Get.arguments["nameCommunity"],textAlign: TextAlign.center,
-                  style: TextStyle(color: appColors.onMain, fontSize: 18),
+                  Get.arguments["nameCommunity"],
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: appColors.themeName == "SAFCSP"
+                          ? Color(0xFF424448)
+                          : appColors.onMain,
+                      fontSize: 18),
                 ),
               ),
               Spacing(height: 20),
@@ -57,11 +65,9 @@ class TuCommunity extends StatelessWidget {
                 child: TabBarCom(
                   tabName: [
                     Tab(
-                        text:
-                      "الرئيسية",
+                      text: "الرئيسية",
                     ),
                     Tab(text: "المشاركين"),
-                   
                   ],
                   numberTab: 2,
                   TabbarViweWidget: [
@@ -70,8 +76,7 @@ class TuCommunity extends StatelessWidget {
                     ListView(
                       children: [
                         BoxtDescription(
-                          description:Get.arguments["description"],
-                            
+                          description: Get.arguments["description"],
                           timeClass: Get.arguments["time"],
                           classNumber: Get.arguments["class"],
                         ),
@@ -82,10 +87,21 @@ class TuCommunity extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                    Center(child: Text("2"),)
-
-                    
-                  
+                    Container(
+                      height: 580,
+                      child: ListView.builder(
+                        itemCount: _Controller.trainees.length,
+                        itemBuilder: (context, index) => UserRankCard(
+                          rank: index + 1,
+                          name: _Controller.trainees[index].name,
+                          profileImagePath:
+                              _Controller.trainees[index].profileImagePath,
+                          point: _Controller.trainees[index].levelPoint,
+                          bannerPath:
+                              _Controller.trainees[index].leaderboardBanner,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )

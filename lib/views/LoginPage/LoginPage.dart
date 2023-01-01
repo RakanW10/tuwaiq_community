@@ -101,7 +101,6 @@ class LoginPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 50),
                         child: liButton(
                           onPressed: () {
-                           
                             emailcontrol.text.isNotEmpty
                                 ? SignInMethod(
                                     emailAddress: emailcontrol.text,

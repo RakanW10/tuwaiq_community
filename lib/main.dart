@@ -8,6 +8,7 @@ import 'package:tuwaiq_community/controllers/likeBTN.dart';
 import 'package:tuwaiq_community/controllers/stateCh.dart';
 
 import 'package:tuwaiq_community/Model/trainee.dart';
+import 'package:tuwaiq_community/controllers/themeController.dart';
 
 import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/testAndDebuge/usersDummyData.dart';
@@ -18,8 +19,6 @@ import 'controllers/myDrawerController.dart';
 import 'firebase_options.dart';
 
 void main() async {
- 
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -36,14 +35,15 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     Get.put(LeaderboardController());
     Get.put(LikeBTN());
     Get.put<MyDrawerController>(MyDrawerController());
-    Get.put(StateChall() ,permanent: true );
+    Get.put(StateChall(), permanent: true);
+    Get.put(ThemeController(), permanent: true);
 
-    appColors.changeTheme();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       initialRoute: RouterName.loginPage,
       getPages: routerApp,
       locale: const Locale("ar", "SA"),
-     // home: Store(),
+      // home: Store(),
     );
   }
 }

@@ -73,4 +73,3 @@ Future ResetPassMethod({required String emailAddress}) async {
         snackPosition: SnackPosition.BOTTOM);
   }
 }
-

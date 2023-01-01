@@ -51,7 +51,7 @@ class LeaderboardPage extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 580,
+                height: 642,
                 child: ListView.builder(
                   itemCount: _leaderboardController.trainees.length,
                   itemBuilder: (context, index) => UserRankCard(

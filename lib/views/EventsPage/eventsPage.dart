@@ -21,7 +21,7 @@ class EventsPage extends StatelessWidget {
         alignment: Alignment.center,
         height: Get.height,
         width: Get.width,
-        decoration:  BoxDecoration(
+        decoration: BoxDecoration(
           gradient: appColors.backgroundColor,
         ),
         child: ListView(
@@ -51,7 +51,7 @@ class EventsPage extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(10, 15, 10, 5),
               child: EventCard(
                   onPressed: () {},
-                  eventName: "web-scraping",
+                  eventName: "web-scraping\n",
                   eventPrize: "250 نقطة",
                   eventLocation: "اكاديمية طويق قاعة G-10",
                   eventDate: "12:00 - 1/2",
