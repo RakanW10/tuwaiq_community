@@ -5,8 +5,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
-class MyWidget extends StatelessWidget {
-  MyWidget({super.key , required this.image , required this.price});
+class BannerBackgruond extends StatelessWidget {
+  BannerBackgruond({super.key, required this.image, required this.price});
   String? image;
   String? price;
 
@@ -34,7 +34,6 @@ class MyWidget extends StatelessWidget {
               width: Get.width - 140,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: appColors.backgraund,
                   image: DecorationImage(
                     image: AssetImage(image!),
                     fit: BoxFit.fill,
@@ -44,10 +43,11 @@ class MyWidget extends StatelessWidget {
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(
                 Icons.lock_outline_rounded,
-                size: 50,
+                size: 40,
                 color: appColors.onMain,
               ),
               Row(

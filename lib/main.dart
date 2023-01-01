@@ -12,6 +12,7 @@ import 'package:tuwaiq_community/controllers/themeController.dart';
 
 import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/testAndDebuge/usersDummyData.dart';
+import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
 import 'package:tuwaiq_community/views/Store/StorePage.dart';
 import 'package:tuwaiq_community/views/style.dart';
 import 'controllers/leaderboardController.dart';
@@ -41,8 +42,8 @@ class MyApp extends StatelessWidget {
     Get.put(LeaderboardController());
     Get.put(LikeBTN());
     Get.put<MyDrawerController>(MyDrawerController());
-    Get.put(StateChall(), permanent: true);
     Get.put(ThemeController(), permanent: true);
+    Get.put(StateChallTimer(), permanent: true);
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -52,7 +53,6 @@ class MyApp extends StatelessWidget {
       initialRoute: RouterName.loginPage,
       getPages: routerApp,
       locale: const Locale("ar", "SA"),
-      // home: Store(),
     );
   }
 }

@@ -23,7 +23,7 @@ class ProfilePage extends GetView<MyDrawerController> {
       appBar: AppBar(
         title: const Text(
           "صفحتي",
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         backgroundColor: appColors.onSecondary,
         leading: IconButton(
@@ -49,7 +49,7 @@ class ProfilePage extends GetView<MyDrawerController> {
                   child: Column(
                     children: [
                       banner(
-                        imageBackGround: AssetImage("images/Banner.png"),
+                        imageBackGround: AssetImage("images/Banner-2.png"),
                         nameTrainee: 'رغد عبدالله',
                         traineeLve: 'الأول على على معسكر fiutter',
                       ),

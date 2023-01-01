@@ -14,7 +14,29 @@ class Store extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: appColors.onSecondary,
-        title: Text("المتجر"),
+        title: Text(
+          "المتجر",
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "1250",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey),
+                ),
+                SizedBox(width: 5),
+                Image.asset("images/coin.png"),
+              ],
+            ),
+          )
+        ],
       ),
       body: Container(
         alignment: Alignment.center,
@@ -48,9 +70,12 @@ class Store extends StatelessWidget {
               itemCount: storeCoupon.length,
               itemBuilder: (context, index) => Row(
                 children: [
-                  coupon(image:storeCoupon[index]["imageCoupon"], price: storeCoupon[index]["price"], p:  storeCoupon[index]["coin"]),
+                  coupon(
+                      image: storeCoupon[index]["imageCoupon"],
+                      price: storeCoupon[index]["price"],
+                      p: storeCoupon[index]["coin"]),
                   SizedBox(
-                    width: 20,
+                    width: 15,
                   )
                 ],
               ),
@@ -58,11 +83,14 @@ class Store extends StatelessWidget {
           ),
           //!-----------------------------------------------------------------------
           Padding(
-            padding: const EdgeInsets.only(right: 20, top: 20),
+            padding: const EdgeInsets.only(
+              right: 20,
+              top: 10,
+            ),
             child: Align(
               alignment: Alignment.bottomRight,
               child: Text(
-                "كوبونات",
+                "اللافيتات",
                 style: TextStyle(
                     color: appColors.onMain,
                     fontSize: 20,
@@ -71,17 +99,16 @@ class Store extends StatelessWidget {
             ),
           ),
           //!-----------------------------------------------------------------------
-          Spacing(height: 20),
-
+          Spacing(height: 15),
 
           Container(
-            height: Get.height / 1.75,
+            height: Get.height / 1.70,
             child: ListView.builder(
               shrinkWrap: true,
               itemCount: storeC.length,
               itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.all(10),
-                child: MyWidget(
+                padding: const EdgeInsets.only(top: 10, right: 10, left: 10),
+                child: BannerBackgruond(
                   image: storeC[index]["imageCoupon"],
                   price: storeC[index]["price"],
                 ),

@@ -5,11 +5,8 @@ import 'package:tuwaiq_community/Model/CommunityData.dart';
 import '../views/CommunitiesPage/components/MychallengesCard.dart';
 import '../views/CommunitiesPage/components/TimerChall.dart';
 
-class StateChall extends GetxController {
-  dynamic state = TimerChall(
-    autoStart: true,
-  );
-
+class StateChallTimer extends GetxController {
+  dynamic state;
   late bool autoStart;
 
   changeStateDone() {

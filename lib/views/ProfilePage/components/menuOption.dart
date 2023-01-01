@@ -3,16 +3,15 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class MenuOption extends StatelessWidget {
-  const MenuOption(
-      {super.key, required this.icon, required this.option, this.onTapFun});
+  MenuOption({super.key, required this.icon, required this.option, this.onTap});
   final IconData icon;
   final String option;
-  final Function()? onTapFun;
+  Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTapFun,
+      onTap: onTap,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
