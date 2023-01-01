@@ -4,12 +4,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/router/router.dart';
 import 'package:tuwaiq_community/views/ProfilePage/components/menuOption.dart';
-<<<<<<< HEAD
+
 import 'package:tuwaiq_community/views/Store/StorePage.dart';
-=======
+
 import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
 import 'package:tuwaiq_community/views/personalProfile/personalProfile.dart';
->>>>>>> 486747a99204a21468d517dfd4d69fb1838d82c1
+
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -42,26 +42,13 @@ class Menu extends StatelessWidget {
             const SizedBox(
               height: 2,
             ),
-<<<<<<< HEAD
-            InkWell(
-              onTap: (() {
-                Store();
-              }),
-              child: MenuOption(
-                onTap: () {
-                  Get.to(Store());
-                },
-                icon: Icons.store_rounded,
-                option: "المتجر",
-              ),
-=======
             MenuOption(
-              onTapFun: () {},
-              icon: Icons.store_rounded,
+              icon: Icons.qr_code,
               option: "المتجر",
->>>>>>> 486747a99204a21468d517dfd4d69fb1838d82c1
-            ),
-          ],
+              onTapFun: () {
+                Get.toNamed(RouterName.store);
+              },
+            )],
         ));
   }
 }

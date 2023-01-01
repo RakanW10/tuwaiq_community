@@ -1,7 +1,7 @@
 List storeCoupon = [
-  {"imageCoupon": "images/image 18.png", "price": "5", "coin": "500"},
-  {"imageCoupon": "images/image 19.png", "price": "5", "coin": "500"},
-  {"imageCoupon": "images/image 20.png", "price": "10", "coin": "700"}
+  {"imageCoupon": "images/image 18.png", "price": "5 ريال", "coin": "500"},
+  {"imageCoupon": "images/image 19.png", "price": "5 ريال", "coin": "500"},
+  {"imageCoupon": "images/image 20.png", "price": "10\$", "coin": "700K"}
 ];
 
 List storeC = [
@@ -15,14 +15,14 @@ List storeC = [
   },
   {
     "imageCoupon": "images/Banner 2-3.png",
-    "price": "60",
+    "price": "25",
   },
   {
     "imageCoupon": "images/Banner 1.png",
     "price": "60",
   },
   {
-    "imageCoupon": "images/Banner 2.png",
+    "imageCoupon": "images/Banner-4.png",
     "price": "60",
   },
 ];

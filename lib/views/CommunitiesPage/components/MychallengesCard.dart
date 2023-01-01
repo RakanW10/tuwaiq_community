@@ -21,7 +21,7 @@ class MychallengesTestCard extends StatelessWidget {
   String coin;
 
   String? points;
-  StateChall timer = Get.find();
+  StateChallTimer timer = Get.find();
 
   @override
   Widget build(BuildContext context) {

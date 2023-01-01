@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
+import 'package:tuwaiq_community/controllers/stateCh.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/style.dart';
 
@@ -14,6 +15,7 @@ sh(
     String? description,
     Function()? onTapA,
     Function()? onTapB}) {
+  StateChallTimer timer = Get.find();
   showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -35,13 +37,15 @@ sh(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Spacing(height: 20),
-                      Expanded(
+                      GetBuilder<StateChallTimer>(
+                        init: StateChallTimer(),
+                        builder: (con)=>Expanded(
                         child: Container(
                           height: 130,
                           width: 130,
-                          child: state,
+                          child: timer.state,
                         ),
-                      ),
+                      ),),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,

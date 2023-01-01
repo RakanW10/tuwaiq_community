@@ -15,7 +15,7 @@ class TimerChall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircularCountDownTimer(
-      duration: 120,
+      duration: 300,
       initialDuration: 0,
       width: 70,
       height: 70,
@@ -26,6 +26,7 @@ class TimerChall extends StatelessWidget {
       textStyle: TextStyle(
           fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
       textFormat: CountdownTextFormat.MM_SS,
+      isReverse: true,
 
       //autoStart: true, //2
       onStart: () {

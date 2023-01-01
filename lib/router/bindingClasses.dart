@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:tuwaiq_community/controllers/appNavigatorController.dart';
 import 'package:tuwaiq_community/controllers/leaderboardController.dart';
-<<<<<<< HEAD
+
 import 'package:tuwaiq_community/controllers/stateCh.dart';
-=======
+
 import 'package:tuwaiq_community/controllers/qrCodePageContoller.dart';
->>>>>>> 486747a99204a21468d517dfd4d69fb1838d82c1
+
 
 class AppNavigatorBinding implements Bindings {
   @override
@@ -28,15 +28,15 @@ class LeaderBoardBinding implements Bindings {
   }
 }
 
-<<<<<<< HEAD
+
 class StateChallBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(StateChall());
+    Get.put(StateChallTimer());
   }
 }
 
-=======
+
 class profileDrawerBinding implements Bindings {
   @override
   void dependencies() {
@@ -44,4 +44,3 @@ class profileDrawerBinding implements Bindings {
     print("here");
   }
 }
->>>>>>> 486747a99204a21468d517dfd4d69fb1838d82c1

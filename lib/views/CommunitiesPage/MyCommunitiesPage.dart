@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:tuwaiq_community/Model/CommunityData.dart';
 import 'package:tuwaiq_community/controllers/leaderboardController.dart';
 import 'package:tuwaiq_community/controllers/stateCh.dart';
@@ -22,7 +23,7 @@ import 'package:tuwaiq_community/views/style.dart';
 
 class MyCommunitiesPage extends StatelessWidget {
   MyCommunitiesPage({super.key});
-  StateChall timer = Get.find();
+  StateChallTimer timer = Get.find();
   LeaderboardController _Controller = Get.find();
 
   @override
@@ -99,82 +100,76 @@ class MyCommunitiesPage extends StatelessWidget {
 
                     //---------------------------------Widget 2-------------------------------
 
-                       Container(
-                  height: 580,
-                  child: ListView.builder(
-                    itemCount: _Controller.trainees.length,
-                    itemBuilder: (context, index) => UserRankCard(
-                      rank: index + 1,
-                      name: _Controller.trainees[index].name,
-                      profileImagePath: "images/person1.png",
-                      point: _Controller.trainees[index].levelPoint,
-                      bannerPath: _Controller
-                          .trainees[index].leaderboardBanner,
+                    Container(
+                      height: 580,
+                      child: ListView.builder(
+                        itemCount: _Controller.trainees.length,
+                        itemBuilder: (context, index) => UserRankCard(
+                          rank: index + 1,
+                          name: _Controller.trainees[index].name,
+                          profileImagePath: "images/person1.png",
+                          point: _Controller.trainees[index].levelPoint,
+                          bannerPath:
+                              _Controller.trainees[index].leaderboardBanner,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
 
                     //----------------------------------Widget 3-------------------------------
 
-                    GetBuilder<StateChall>(
-                        init: StateChall(),
-                        builder: ((con) {
-                          return GridView.builder(
-                            itemCount: Mychallenges?.length,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 1,
-                              childAspectRatio: 3,
-                            ),
-                            itemBuilder: (BuildContext context, int index) {
-                              return Expanded(
-                                flex: 1,
-                                child: Column(
-                                  children: [
-                                    MychallengesTestCard(
-                                      onTapCard: () {
-                                        sh(
-                                            onTapA: () {
-                                              con.changeStateDone();
-                                              con.update();
-                                              Get.back();
-                                            },
-                                            onTapB: (() {
-                                              con.changeStateExit();
-                                              con.update();
-                                               Get.back();
-                                            }),
-                                            context: context,
-                                            adrees: Mychallenges![index]
-                                                ["challenges"],
-                                            prize: Mychallenges![index]
-                                                ['points'],
-                                            state: Mychallenges![index]
-                                                        ["image"] ==
-                                                    Mychallenges![0]["image"]
-                                                ? con.state
-                                                : Image.asset(
-                                                    Mychallenges![index]
-                                                        ["image"]),
-                                            description: Mychallenges![index]
-                                                ["description"]);
-                                      },
-                                      state: Mychallenges![index]["image"] ==
-                                              Mychallenges![0]["image"]
-                                          ? con.state
-                                          : Image.asset(
-                                              Mychallenges![index]["image"]),
-                                      nameChallenges: Mychallenges![index]
-                                          ["challenges"],
-                                      points: Mychallenges![index]['points'],
-                                      coin: Mychallenges![index]['coin'],
-                                    ),
-                                  ],
+                    GetBuilder<StateChallTimer>(builder: ((con) {
+                      return GridView.builder(
+                        itemCount: Mychallenges?.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1,
+                          childAspectRatio: 3,
+                        ),
+                        itemBuilder: (BuildContext context, int index) {
+                          return Expanded(
+                            flex: 1,
+                            child: Column(
+                              children: [
+                                MychallengesTestCard(
+                                  onTapCard: () {
+                                    sh(
+                                        onTapA: () {
+                                          con.changeStateDone();
+                                          con.update();
+                                          Get.back();
+                                        },
+                                        onTapB: (() {
+                                          con.changeStateExit();
+                                          con.update();
+                                          Get.back();
+                                        }),
+                                        context: context,
+                                        adrees: Mychallenges![index]
+                                            ["challenges"],
+                                        prize: Mychallenges![index]['points'],
+                                        state: Mychallenges![index]["image"] ==
+                                                Mychallenges![0]["image"]
+                                            ? timer.state
+                                            : Image.asset(
+                                                Mychallenges![index]["image"]),
+                                        description: Mychallenges![index]
+                                            ["description"]);
+                                  },
+                                  state: Mychallenges![index]["image"] ==
+                                          Mychallenges![0]["image"]
+                                      ? timer.state
+                                      : Image.asset(
+                                          Mychallenges![index]["image"]),
+                                  nameChallenges: Mychallenges![index]
+                                      ["challenges"],
+                                  points: Mychallenges![index]['points'],
+                                  coin: Mychallenges![index]['coin'],
                                 ),
-                              );
-                            },
+                              ],
+                            ),
                           );
-                        })),
+                        },
+                      );
+                    })),
 
                     //-------------------------------Widget 4-------------------------------
                     GridView.builder(
@@ -192,19 +187,16 @@ class MyCommunitiesPage extends StatelessWidget {
                                 image: MyTasks![index]["image"],
                                 nameTask: MyTasks![index]["challenges"],
                                 points: MyTasks![index]['points'],
-                                 
-
-                                 onTapCard: () => ShMyTasks(context: context ,
-                                 adrees: MyTasks![index]["challenges"],
-                                 prize: MyTasks![index]["points"],
-                                 image: MyTasks![index]["image"],
-                                 description: MyTasks![index]["description"],
-                                 onTapA: () {
-                                 Get.back();
-                                 },
-                                 onTapB:() => Get.back()
-                              
-                                 ),
+                                onTapCard: () => ShMyTasks(
+                                    context: context,
+                                    adrees: MyTasks![index]["challenges"],
+                                    prize: MyTasks![index]["points"],
+                                    image: MyTasks![index]["image"],
+                                    description: MyTasks![index]["description"],
+                                    onTapA: () {
+                                      Get.back();
+                                    },
+                                    onTapB: () => Get.back()),
                               ),
                             ],
                           ),
@@ -219,5 +211,3 @@ class MyCommunitiesPage extends StatelessWidget {
     );
   }
 }
-
-
