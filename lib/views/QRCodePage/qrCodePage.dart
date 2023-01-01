@@ -21,7 +21,6 @@ class QRCodePage extends StatelessWidget {
       body: Center(
         child: GestureDetector(
           onTap: () {
-            print(_qrCodePageController.islooked);
             _qrCodePageController.changeLookState();
           },
           child: GetBuilder<QRCodePageController>(
@@ -40,7 +39,7 @@ class QRCodePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: _qrCodePageController.islooked
+                child: _qrCodePageController.islocked
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

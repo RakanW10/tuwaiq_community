@@ -11,6 +11,11 @@ import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
 import 'package:tuwaiq_community/views/personalProfile/personalProfile.dart';
 
 
+import 'package:tuwaiq_community/views/Store/StorePage.dart';
+import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
+import 'package:tuwaiq_community/views/personalProfile/personalProfile.dart';
+
+
 class Menu extends StatelessWidget {
   const Menu({super.key});
 
@@ -23,8 +28,8 @@ class Menu extends StatelessWidget {
         child: Column(
           children: [
             MenuOption(
-              onTapFun: () {
-                Get.to(()=>PersonalProfile());
+              onTap: () {
+                Get.to(() => PersonalProfile());
               },
               icon: Icons.folder_shared_rounded,
               option: "الملف الشخصي",
@@ -35,7 +40,7 @@ class Menu extends StatelessWidget {
             MenuOption(
               icon: Icons.qr_code,
               option: "بطاقتي",
-              onTapFun: () {
+              onTap: () {
                 Get.toNamed(RouterName.qrCodePage);
               },
             ),
@@ -43,12 +48,18 @@ class Menu extends StatelessWidget {
               height: 2,
             ),
             MenuOption(
+
               icon: Icons.qr_code,
               option: "المتجر",
-              onTapFun: () {
+              onTap: () {
                 Get.toNamed(RouterName.store);
               },
             )],
-        ));
+
+          
+            ),
+          
+
+        );
   }
 }

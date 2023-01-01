@@ -8,6 +8,9 @@ import 'package:tuwaiq_community/views/Store/StorePage.dart';
 
 import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
 
+import 'package:tuwaiq_community/views/Store/StorePage.dart';
+import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
+
 import 'package:tuwaiq_community/views/appNavigator.dart';
 
 import '../views/CommunitiesPage/CommunitiesPage.dart';
@@ -33,21 +36,17 @@ List<GetPage<dynamic>> routerApp = [
   GetPage(
     name: RouterName.appDrawer,
     page: () => profileDrawer(),
-
+    binding: profileDrawerBinding(),
   ),
   GetPage(
     name: RouterName.store,
     page: () => Store(),
-     binding: AppNavigatorBinding(),
+    binding: AppNavigatorBinding(),
   ),
-
-   
-
   GetPage(
     name: RouterName.qrCodePage,
     page: () => QRCodePage(),
   ),
-
 ];
 
 abstract class RouterName {
@@ -58,8 +57,6 @@ abstract class RouterName {
   static const String communitiesPage = "/communitiesPage";
   static const String leaderboardPage = "/leaderboardPage";
 
-   static const String store = "/Store";
+  static const String store = "/Store";
   static const String qrCodePage = "/qrCodePage";
-
 }
-

@@ -1,18 +1,10 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:tuwaiq_community/Model/CommunityData.dart';
 import 'package:tuwaiq_community/Model/store.dart';
-import 'package:tuwaiq_community/views/GlobalComponents/AppBar.dart';
 import 'package:tuwaiq_community/views/LoginPage/components/spacing.dart';
 import 'package:tuwaiq_community/views/Store/components/Banner.dart';
 import 'package:tuwaiq_community/views/Store/components/couponCard.dart';
 import 'package:tuwaiq_community/views/style.dart';
-
-import '../CommunitiesPage/components/MychallengesCard.dart';
 
 class Store extends StatelessWidget {
   const Store({super.key});

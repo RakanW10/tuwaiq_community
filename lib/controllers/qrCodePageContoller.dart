@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
 class QRCodePageController extends GetxController {
-  bool islooked = true;
+  bool islocked = true;
   void changeLookState() {
-    islooked = !islooked;
+    islocked = !islocked;
     update();
   }
 }
