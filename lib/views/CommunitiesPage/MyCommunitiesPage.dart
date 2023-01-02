@@ -60,9 +60,7 @@ class MyCommunitiesPage extends StatelessWidget {
                       Get.arguments["nameCommunity"],
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: appColors.themeName == "SAFCSP"
-                            ? Color(0xFF424448)
-                            : appColors.onMain,
+                        color: appColors.onMain,
                         fontSize: 18,
                       ),
                     ),
@@ -173,10 +171,9 @@ class MyCommunitiesPage extends StatelessWidget {
                         },
                       );
                     })),
-
                     //-------------------------------Widget 4-------------------------------
                     GridView.builder(
-                      itemCount: MyTasks?.length,
+                      itemCount: MyTasks.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 1,
                         childAspectRatio: 3,

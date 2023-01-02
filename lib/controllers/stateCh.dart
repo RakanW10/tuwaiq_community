@@ -7,7 +7,8 @@ import '../views/CommunitiesPage/components/TimerChall.dart';
 
 class StateChallTimer extends GetxController {
   dynamic state;
-  late bool autoStart;
+  late bool autoStart ;
+  
 
   changeStateDone() {
     state = Image.asset("images/Timer-3.png");
@@ -17,12 +18,14 @@ class StateChallTimer extends GetxController {
     state = Image.asset("images/wrong-icon 1.png");
   }
 
-  // @override
-  // void onInit() {
-  //   // TODO: implement onInit
-  //   super.onInit();
-  //   update();
-  // }
+  @override
+  void onInit() {
+    state = TimerChall( autoStart: true,);
+    autoStart = true;
+    // TODO: implement onInit
+    super.onInit();
+    update();
+  }
 
   @override
   void onClose() {

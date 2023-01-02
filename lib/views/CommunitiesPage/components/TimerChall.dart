@@ -17,21 +17,16 @@ class TimerChall extends StatelessWidget {
     return CircularCountDownTimer(
       duration: 300,
       initialDuration: 60,
-      isReverse: true,
       width: 70,
       height: 70,
       ringColor: appColors.onMain,
       strokeWidth: 6,
-
       fillColor: appColors.backgraund,
       controller: CountDownController(),
-
       textStyle: TextStyle(
-        fontSize: 15,
-        color: Colors.white,
-        fontWeight: FontWeight.bold,
-      ),
+          fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
       textFormat: CountdownTextFormat.MM_SS,
+      isReverse: true,
 
       //autoStart: true, //2
       onStart: () {

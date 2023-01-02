@@ -50,11 +50,7 @@ class TuCommunity extends StatelessWidget {
                 child: Text(
                   Get.arguments["nameCommunity"],
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: appColors.themeName == "SAFCSP"
-                          ? Color(0xFF424448)
-                          : appColors.onMain,
-                      fontSize: 18),
+                  style: TextStyle(color: appColors.onMain, fontSize: 18),
                 ),
               ),
               Spacing(height: 20),
