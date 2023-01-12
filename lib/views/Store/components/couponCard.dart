@@ -35,7 +35,7 @@ class coupon extends StatelessWidget {
               Image.asset(image!),
               Spacing(height: 10),
               Text(
-                "${price}"!,
+                "${price}",
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,

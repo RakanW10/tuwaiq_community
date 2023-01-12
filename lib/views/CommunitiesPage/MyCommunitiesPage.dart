@@ -184,15 +184,15 @@ class MyCommunitiesPage extends StatelessWidget {
                           child: Column(
                             children: [
                               MyTaskCard(
-                                image: MyTasks![index]["image"],
-                                nameTask: MyTasks![index]["challenges"],
-                                points: MyTasks![index]['points'],
+                                image: MyTasks[index]["image"],
+                                nameTask: MyTasks[index]["challenges"],
+                                points: MyTasks[index]['points'],
                                 onTapCard: () => ShMyTasks(
                                     context: context,
-                                    adrees: MyTasks![index]["challenges"],
-                                    prize: MyTasks![index]["points"],
-                                    image: MyTasks![index]["image"],
-                                    description: MyTasks![index]["description"],
+                                    adrees: MyTasks[index]["challenges"],
+                                    prize: MyTasks[index]["points"],
+                                    image: MyTasks[index]["image"],
+                                    description: MyTasks[index]["description"],
                                     onTapA: () {
                                       Get.back();
                                     },

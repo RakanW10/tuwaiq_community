@@ -39,13 +39,14 @@ sh(
                       Spacing(height: 20),
                       GetBuilder<StateChallTimer>(
                         init: StateChallTimer(),
-                        builder: (con)=>Expanded(
-                        child: Container(
-                          height: 130,
-                          width: 130,
-                          child: timer.state,
+                        builder: (con) => Expanded(
+                          child: Container(
+                            height: 130,
+                            width: 130,
+                            child: timer.state,
+                          ),
                         ),
-                      ),),
+                      ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,7 +86,7 @@ sh(
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
                             child: Text(
-                              prize!,
+                              prize,
                               style: TextStyle(
                                   fontSize: 16, color: appColors.onMain),
                             ),
