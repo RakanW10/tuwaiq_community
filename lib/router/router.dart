@@ -8,8 +8,6 @@ import 'package:tuwaiq_community/views/Store/StorePage.dart';
 
 import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
 
-import 'package:tuwaiq_community/views/Store/StorePage.dart';
-import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
 
 import 'package:tuwaiq_community/views/appNavigator.dart';
 

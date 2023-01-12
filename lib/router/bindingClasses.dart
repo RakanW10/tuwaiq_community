@@ -8,9 +8,6 @@ import 'package:tuwaiq_community/controllers/stateCh.dart';
 import 'package:tuwaiq_community/controllers/qrCodePageContoller.dart';
 
 
-import 'package:tuwaiq_community/controllers/stateCh.dart';
-import 'package:tuwaiq_community/controllers/qrCodePageContoller.dart';
-
 
 class AppNavigatorBinding implements Bindings {
   @override
