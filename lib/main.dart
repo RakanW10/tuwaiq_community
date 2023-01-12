@@ -2,19 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tuwaiq_community/Model/CommunityData.dart';
 import 'package:tuwaiq_community/controllers/likeBTN.dart';
-
 import 'package:tuwaiq_community/controllers/stateCh.dart';
-
-import 'package:tuwaiq_community/Model/trainee.dart';
 import 'package:tuwaiq_community/controllers/themeController.dart';
 
 import 'package:tuwaiq_community/router/router.dart';
-import 'package:tuwaiq_community/testAndDebuge/usersDummyData.dart';
-import 'package:tuwaiq_community/views/QRCodePage/qrCodePage.dart';
-import 'package:tuwaiq_community/views/Store/StorePage.dart';
-import 'package:tuwaiq_community/views/style.dart';
 import 'controllers/leaderboardController.dart';
 import 'controllers/myDrawerController.dart';
 import 'firebase_options.dart';
